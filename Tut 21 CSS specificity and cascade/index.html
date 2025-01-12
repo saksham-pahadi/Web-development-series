@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS specificity and cascade</title>
+    <style>
+        /* 
+         The cascade algorithm has 4 distinct stages. 
+         1.Position and order of appearance: the order in which your CSS rules appear 
+
+         2.Specificity: an algorithm that determines which CSS selector has the strongest match 
+        So, the order of specificity is:
+        Inline Style > ID Selector > Class or Attribute Selector > Element Selector > Universal Selector
+
+         3.Origin: the order in which CSS appears and where it comes from,
+        whether that is a browser style,
+        CSS from a browser extension,
+        or your authored CSS 
+
+        4.Importance: some CSS rules are weighted more heavily than others,
+        especially with the !important rule type 
+         */
+        .yellow {
+            color: yellow !important;
+        }
+
+
+        .cpurple {
+            color: purple;
+        }
+
+        .cred {
+            color: red;
+        }
+
+        h1 {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h1 class="yellow cred cpurple">CSS Specificity</h1>
+    </div>
+</body>
+
+</html>

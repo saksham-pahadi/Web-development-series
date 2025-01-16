@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media queries</title>
+    <style>
+        /* let us example: 
+        min-455px mobiles
+        455px-750px Tablets
+        750px-1080px Monitor
+        1080px-max tv */
+        body {
+            background-color: red;
+        }
+
+        @media screen and (orientation:portrait) {
+
+            body{
+                border: 2px solid purple;
+            }
+
+        }
+
+        @media only screen and (max-width:445px) {
+            body {
+                background-color: blue;
+            }
+
+            .boxes {
+                flex-direction: column;
+            }
+        }
+
+        .boxes {
+            display: flex;
+        }
+
+        .box {
+            width: 344px;
+            height: 344px;
+            background-color: steelblue;
+            padding: 3px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        I am a red body guy!
+    </div>
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

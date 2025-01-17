@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <style>
+        .container{
+            width: 80vw;
+            height: 80vh;
+            border: 2px solid black;
+            display: grid;
+            /* grid-template-columns: [first]100px [second]100px [third]100px;
+            grid-template-rows: [one]100px [two]100px [three]100px; */
+            /* grid-template-columns: 1fr 2fr 1fr; */
+            /* grid-template-columns: repeat(3,minmax(100px,1fr)); */
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2,80px);
+            gap: 10px 44px ;
+            /* align-content: center;
+            justify-content: center; */
+            place-content: center;
+            align-items: center;
+            justify-items: center;
+        }
+        .item{
+            border: 2px solid red;
+            height: 55px;
+            width: 55px;
+        
+        }
+        .item2{
+            align-self: start;
+            justify-self: start;
+        }
+        /* .item1{
+            grid-row: 1/2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column: 1/2;
+        } */
+        
+        /* .item4{
+            grid-row: 1/2;
+            grid-column: first/third;
+        } */
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">Item 1</div>
+        <div class="item item2">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item item4">Item 4</div>
+        <div class="item">Item 5</div>
+        <!-- <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item item4">Item 4</div>
+        <div class="item">Item 5</div> -->
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            background-color: green;
+        }
+
+        nav {
+            position: sticky;
+            top: 0px;
+            background-color: rgb(177, 111, 239);
+
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            padding: 10px;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #logo {
+
+            height: 70px;
+            border-radius: 40px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+        }
+
+        .subsection {
+            padding: 50px;
+            height: 70vh;
+            width: 500px;
+            margin: 50px auto;
+            text-align: center;
+
+            font-size: 20px;
+        }
+
+        #right {
+            background-color: peru;
+
+        }
+
+        #left {
+            background-color: lightskyblue;
+
+        }
+
+        article {
+            justify-content: center;
+
+        }
+
+        article h2 {
+            text-align: center;
+            font-size: 100px;
+            padding: 20px;
+            margin: 20px;
+            border: 2px solid white;
+            color: white;
+            border-radius: 100px;
+        }
+
+        footer {
+            background-color: rgb(187, 187, 187);
+            height: 150px;
+            text-align: center;
+            font-size: 50px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Service</li>
+            <li>Contact us</li>
+        </ul>
+    </nav>
+    <main>
+        <img id="logo"
+            src="https://static.vecteezy.com/system/resources/previews/004/753/002/non_2x/custom-coding-icon-shadowed-detailed-custom-coding-logo-free-vector.jpg"
+            alt="">
+        <div class="section">
+            <section class="subsection" id="right">left Section</section>
+            <section class="subsection" id="left">Right section</section>
+        </div>
+        <article>
+            <h2>Welcome to this Sigma Web Development Express</h2>
+        </article>
+    </main>
+    <footer>
+        Footer
+    </footer>
+</body>
+
+</html>

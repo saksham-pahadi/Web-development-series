@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(44, 43, 43);
+}
+header{
+    background-color: white;
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header img{
+    height: 8vh;
+    margin: auto;
+    margin-left: 150px;
+}
+header nav ul{
+    padding: 2vh;
+    margin: auto 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header nav ul li{
+    position: relative;
+    font-size: 16px;
+    list-style: none;
+    padding: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header nav ul li a{
+    position: relative;
+    right: 150px;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+header nav ul li a img{
+    height: 25px;
+    
+    transform: rotatey(180deg);
+}
+header nav ul li:hover{
+    transition: ease-in-out 0.5s;
+color: black;
+font-weight: 500;
+}
+/* main */
+main section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#left{
+    /* display: flex; */
+    justify-content: center;
+    width: 40vw;
+    
+}
+#right{
+    width: 40vw;
+}
+#left a{
+    color: skyblue;
+    font-size: large;
+}
+#left img{
+    height: 30%;
+}
+.subsection{
+    margin: 50px auto;
+
+}
+.subsection >p{
+    font-size: 25px;
+    height: 150px;
+    color: white;
+}
+.buttons{
+    text-align: start;
+    display: flex;
+    width: 110%;
+    justify-content: space-between;
+}
+#btn1:hover, #btn2:hover{
+
+    transition: ease-in-out 0.5s;
+    transform: scale(110%);
+}
+#btn1{
+    background-color: rgb(128, 213, 255);
+    padding: 10px 20px;
+    /* border: 3px solid skyblue; */
+    border-radius: 10px;
+    color:white;
+    font-weight: bold;
+}
+#btn1 p{
+font-weight: lighter;
+}
+#btn2{
+    background-color: rgb(44, 43, 43);
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.btn{
+    width: 100%;
+    height:70px;
+    margin: 20px;
+}
+

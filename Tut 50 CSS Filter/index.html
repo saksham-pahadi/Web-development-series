@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Filters</title>
+    <style>
+        
+        .img1{
+            height: 500px;
+            filter: blur(0px) brightness(200%) contrast(1) invert(1);
+        }
+        .img2{
+filter: grayscale(100%) sepia(17%) drop-shadow(10px 10px 10px red);
+        }
+        .img3{
+            filter: opacity(0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="img1" src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="">
+        <img class="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHHqCdfHbbksZFYPDTOQZUyOIpJNnwfhemGA&s" alt="">
+        <img class="img3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjN3kznrKIXYxgMR8qEXFKLUCoXYzAXpe2gYiDrNOVyQ1qg1yGHt9MKr1T3Sj069LnTZY&usqp=CAU"
+            alt="">
+    </div>
+</body>
+
+</html>

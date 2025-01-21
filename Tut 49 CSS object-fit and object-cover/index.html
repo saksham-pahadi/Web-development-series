@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object fit and object cover</title>
+    <style>
+        .container{
+            height: 488px;
+            width: 466px;
+            border: 2px solid black;
+            /* background-color: azure; */
+            /* background-image: url(https://www.wearegecko.co.uk/media/50316/mountain-3.jpg); */
+            background-image: url(https://www.topmediai.com/micro/passport-photo-maker/assets/bigger_pic2-69047725.png);
+            background-position: 50% 50%;
+            background-repeat: repeat;
+            background-clip: border-box;
+        }
+        img{
+            width: 466px;
+            height: 488px;
+            object-fit: cover;
+            /* object-fit: contain; */
+            /* object-fit: fill; */
+            object-position: 50% 50%;
+            /* object-position: bottom right; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <img src="https://www.wearegecko.co.uk/media/50316/mountain-3.jpg" alt=""> -->
+    </div>
+</body>
+</html>

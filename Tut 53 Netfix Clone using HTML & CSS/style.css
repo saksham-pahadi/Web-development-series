@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+header{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/7a8c0067-a424-4e04-85f8-9e25a49a86ed/web/IN-en-20250120-TRIFECTA-perspective_860a95da-c386-446e-af83-fef8ddd80803_large.jpg);
+    background-size: cover;
+    background-position: center center;
+    
+    
+}
+header .container{
+    color: red;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    
+    filter: opacity(0.7);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    top: 0px;
+    margin: 0px 100px;
+    
+}
+nav img{
+    height: 80px;
+}
+nav div {
+    display: flex;
+    align-items: center;
+}
+.btn{
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    margin: 10px;
+    padding: 10px 20px;
+    text-align: center;
+}
+nav div button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+
+}
+#langbtn{
+
+    background-color: rgba(0, 0, 0, 0.18);
+    backdrop-filter: opacity(0%);
+    border: 2px solid white;
+    text-align: center;
+}
+nav div button img{
+    height: 20px;
+    margin-right: 2px;
+    /* filter: invert(100%); */
+}
+
+header .container2{
+    position: relative;
+    max-width: 50vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    z-index: 2;
+}
+.container2 p:nth-child(1){
+    font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+    position: relative;
+    top: 17vh;
+    text-align: center;
+    margin-top: 30px;
+    height: 280px;
+    font-size: 56px;
+    font-weight: 900;
+}
+.container2 p:nth-child(2){
+    font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+    text-align: center;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.container2 p:nth-child(3){
+    font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+    text-align: center;
+    height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.container2 div{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container2 div input{
+    width: 45%;
+    height: 50px;
+    padding-left: 20px;
+    background-color: rgba(64, 64, 64, 0.281);
+    border: 0.5px solid grey;
+    border-radius: 5px;
+}
+.container2 div input::placeholder{
+    font-size: 16px;
+    color: grey;
+}
+#submitbtn{
+    font-size: 25px;
+    width: 30%;
+height: 50px;
+}
+.base1{
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
+    height: 6.25rem;
+    z-index: 1;
+
+}
+.base2{
+    box-sizing: border-box;
+}
+.base3{
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    margin: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: solid .25rem transparent;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    border-bottom: none;
+    background: radial-gradient(50% 500% at 50% -420%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}

@@ -133,6 +133,8 @@ header .container2{
     background-color: rgba(64, 64, 64, 0.281);
     border: 0.5px solid grey;
     border-radius: 5px;
+    color: white;
+    font-size: 16px;
 }
 .container2 div input::placeholder{
     font-size: 16px;
@@ -233,6 +235,12 @@ overflow-x: scroll;
     border-radius: 10px;
     width: 200px;
     height: 300px;
+    /* padding: 20px; */
+}
+.movies img:hover{
+    transform: scale(1.1,1.1);
+    transition: all 0.5s;
+
 }
 /* more reasons to join */
 .mrtj{
@@ -309,6 +317,11 @@ overflow-x: scroll;
     align-items: center;
     justify-content: space-between;
 }
+.faq h6:hover{
+    background-color: rgb(95, 95, 95);
+    transition: all 0.5s;
+
+}
 .faq h6 p{
     font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
     font-weight: 100;
@@ -337,6 +350,8 @@ overflow-x: scroll;
     background-color: rgba(64, 64, 64, 0.281);
     border: 0.5px solid grey;
     border-radius: 5px;
+    color: white;
+    font-size: 16px;
 }
 .faq div input::placeholder{
     font-size: 16px;
@@ -378,4 +393,11 @@ footer p,footer div {
 }
 footer button,footer p:nth-last-child(1){
     color: white;
+}
+footer p a{
+    text-decoration: underline;
+    color: rgb(167, 167, 167);
+}
+button:hover{
+    cursor: pointer;
 }

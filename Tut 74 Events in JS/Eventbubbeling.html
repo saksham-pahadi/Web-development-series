@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubbeling</title>
+    <style>
+        .child {
+            background-color: aliceblue;
+            border: 2px solid black;
+            padding: 34px;
+            margin: 34px;
+        }
+
+        .childcontainer {
+            background-color: beige;
+            border: 2px solid black;
+            padding: 34px;
+            margin: 34px;
+        }
+
+        .container {
+            background-color: yellow;
+            border: 2px solid black;
+            padding: 34px;
+            margin: 34px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="childcontainer">
+            <div class="child">
+                I am a child
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".child").addEventListener("click", (e) => {
+            e.stopPropagation();
+            alert("Child wes clicked");
+        })
+        document.querySelector(".childcontainer").addEventListener("click", (e) => {
+            alert("ChildContainer wes clicked");
+        })
+        document.querySelector(".container").addEventListener("click", (e) => {
+
+            alert("Container wes clicked");
+        })
+
+function getRandomColor(){
+    let val1=Math.floor(Math.random()*255);
+    let val2=Math.floor(Math.random()*255);
+    let val3=Math.floor(Math.random()*255);
+    return `rgb(${val1},${val2},${val3})`
+}
+
+    let a =    setInterval(() => {
+            document.querySelector(".childcontainer").style.background=getRandomColor();
+        },500);
+        // clearInterval(1)
+     let b=   setTimeout(() => {
+            document.querySelector(".container").style.background=getRandomColor();
+        },1000);
+        // clearTimeout(1)
+    </script>
+</body>
+
+</html>

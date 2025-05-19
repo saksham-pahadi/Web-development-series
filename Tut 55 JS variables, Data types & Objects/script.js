@@ -33,4 +33,5 @@ o.salary = "100 crores";
 console.log(o);
 o.salary = "500 crores";
 console.log(o.name);
+
 console.log(o["job code"]);

@@ -83,8 +83,6 @@ let prom5= new Promise((resolve, reject)=>{
 // })
 
 
-
-
 // console.log("ALLSETTELED PROMISE")
 let p3=Promise.allSettled([prom1,prom2,prom3,prom4,prom5])
 p3.then((a)=>{

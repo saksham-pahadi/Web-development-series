@@ -1,27 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
-:root{
-    --a:0;
-    --temp:#5d5d5d;
-    --bg1:#000000;
-    --bg2:#121212;
-    --bg3:#1f1f1f;
-    --bg4:#121212;
-    --ftclr1:white;
-    --ftclr2:#adabab;
+:root {
+    --a: 0;
+    --temp: #5d5d5d;
+    --bg1: #000000;
+    --bg2: #121212;
+    --bg3: #1f1f1f;
+    --bg4: #2d2c2c;
+    --ftclr1: white;
+    --ftclr2: #adabab;
 }
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-body{
+h2,h3,h4,p{
+    cursor: default;
+}
+body {
     background-color: var(--bg1);
     color: var(--ftclr1);
+    position: relative;
 }
 
-.icon{
+img,button,a{
+    cursor: pointer;
+}
+
+.icon {
     filter: invert(1);
 }
 
@@ -29,28 +38,31 @@ body{
 
 /* header */
 
-header{
+header {
+    position: static;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 50px;
     padding: 10px 0;
 }
-header div{
+
+header div {
     display: flex;
     gap: 5px;
 }
 
-.left{
+.left {
     align-items: center;
 }
 
-.left > img{
-padding: 0 20px;
-height: 35px;
+.left>img {
+    padding: 0 20px;
+    height: 35px;
 
 }
-#Hleft1{
+
+#Hleft1 {
     justify-content: center;
     align-items: center;
     height: 50px;
@@ -58,29 +70,50 @@ height: 35px;
     background-color: var(--bg2);
     border-radius: 25px;
 }
-#Hleft1 img{
+
+#Hleft1:hover {
+
+    background-color: var(--bg3);
+    transition: 200ms;
+}
+
+#Hleft1 img {
     margin: 0 10px;
     height: 25px;
 }
 
-#Hleft2{
+#Hleft2 {
     align-items: center;
     margin: 0 10px;
     padding: 5px 10px;
-background-color: #1f1f1f;
-border-radius: 30px;
-width: 450px;
-height: 40px;
+    background-color: var(--bg3);
+    border-radius: 30px;
+    width: 450px;
+    height: 40px;
 }
-#Hleft2 img{
+
+#Hleft2:hover {
+    background-color: var(--bg4);
+    transition: 200ms;
+}
+
+#Hleft2 img {
     height: 30px;
     width: 40px;
+    filter: invert(0.5);
 }
-#Hleft2 p{
+
+#Hleft2 img:hover {
+    filter: invert(1);
+    transition: 200ms;
+}
+
+#Hleft2 p {
     font-size: 30px;
     color: var(--temp);
 }
-#Hleft2 input{
+
+#Hleft2 input {
     width: 370px;
     background-color: transparent;
     height: 35px;
@@ -89,49 +122,56 @@ height: 40px;
     font-size: 16px;
     outline: none;
 }
-#Hleft2 input::placeholder{
+
+#Hleft2 input::placeholder {
     font-size: 16px;
+
 }
 
 
-header .right{
+header .right {
     display: flex;
     align-items: center;
-    
+
 }
-header .right p{
+
+header .right p {
     color: var(--ftclr1);
     font-size: 30px;
-    
+
 }
-#Hright1{
+
+#Hright1 {
     align-items: center;
-    padding:0 15px;
+    padding: 0 15px;
 }
-#Hright2{
+
+#Hright2 {
     align-items: center;
 }
 
 
-#Hright1 a{
+#Hright1 a {
     text-decoration: none;
     min-width: 80px;
     font-weight: bold;
     color: var(--ftclr2);
 }
-#Hright2 a{
+
+#Hright2 a {
     text-decoration: none;
     min-width: 90px;
     font-weight: bold;
     color: var(--ftclr2);
 }
 
-#Hright2 a{
+#Hright2 a {
     font-weight: bold;
     color: var(--ftclr2);
     margin: 0 20px;
 }
-#signup{
+
+#signup {
     font-weight: bold;
     margin: 0 10px;
     color: var(--ftclr2);
@@ -142,32 +182,67 @@ header .right p{
     font-family: 17px;
 }
 
-#login{
+#login {
     justify-content: center;
     width: 125px;
-    
+
 }
-#login button{
+
+#login button {
     height: 50px;
     background-color: var(--ftclr1);
     width: 120px;
-    
+
     border-radius: 25px;
-    margin: 2px;
+    margin: 10px;
     font-size: 17px;
     font-weight: bold;
     border: none;
 }
-#login button:hover{
+
+#login button:hover {
     height: 51px;
     width: 125px;
     font-size: 18px;
     align-items: center;
+    transition: 200ms;
 }
 
-#Hright1 a:hover,#Hright2 a:hover,#signup:hover{
+#Hright1 a:hover,
+#Hright2 a:hover,
+#signup:hover {
     color: var(--ftclr1);
     font-size: 17px;
+    transition: 200ms;
+}
+
+#hamburger {
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: var(--bg4);
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+
+}
+
+#tile {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.tiles {
+    border-radius: 5px;
+    width: 30px;
+    background-color: black;
+    height: 5px;
 }
 
 
@@ -176,49 +251,379 @@ header .right p{
 
 
 
-main{
+main {
     display: flex;
-    margin:0 10px;
+    margin: auto;
     gap: 10px;
+    width: 99%;
+    min-height: 90vh;
+    align-items: center;
+    justify-content: center;
 }
-main > *{
+
+main>* {
     border-radius: 5px;
 }
-aside{
+
+aside {
+    height: 90vh;
     background-color: var(--bg2);
     width: 25%;
+    position: relative;
 }
-#aside1{
+
+#aside1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 5px;
+    margin: 15px;
 }
-#aside1 img{
+
+#aside1 img {
     height: 20px;
 }
 
-section{
+#aside2 {
+    /* border: 1px solid var(--ftclr2); */
     background-color: var(--bg4);
+    border-radius: 5px;
+    height: 470px;
+    margin: 10px;
+    overflow-y: scroll;
+}
+
+#aside2::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#aside2 ul li {
+    background-color: var(--bg3);
+    /* border: 1px solid var(--ftclr1); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+#aside2 ul li div {
+    width: 250px;
+}
+
+
+
+
+
+footer a {
+    text-decoration: none;
+    color: var(--ftclr2);
+    font-weight: 500;
+}
+
+footer div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px;
+    font-size: 12px;
+
+}
+
+#langbtn img {
+    height: 20px;
+}
+
+#langbtn button {
+    background-color: transparent;
+    border: none;
+    color: var(--ftclr1);
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 20px;
+}
+
+#langbtn {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: 1px solid var(--ftclr1);
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px 20px;
+    width: 80px;
+}
+
+
+
+
+
+
+section {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(to bottom, var(--bg4), var(--bg2));
     width: 75%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 1200px) {
-    
+#section1 {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 40px;
+    font-size: 15px;
 }
 
-@media (max-width: 500px) {
-    
-    
+#section1 button {
+    background-color: transparent;
+    border: none;
+    color: var(--ftclr2);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+
+#player {
+    visibility: hidden;
+    position: fixed;
+    top: 74%;
+    width: 70%;
+    background: linear-gradient(to bottom, var(--bg2), var(--bg4));
+    height: 150px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+}
+#cross{
+    position: relative;
+    top: -20px;
+    right: 5px;
+    text-align: right;
+    cursor: pointer;
+}
+
+#songinfo {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    width: 100%;
+}
+#songdetail{
+width: 80%;
+}
+
+#songinfo img {
+    height: 50px;
+    border-radius: 10px;
+}
+
+.controls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin: 10px;
+}
+
+#playbtns {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#seekVolume{
+    gap: 10px;
+    display: flex;
+    width: 98%;
+    align-items: center;
+}
+#volValue{
+    width: 45px;
+}
+input[type="range"] {
+  cursor: pointer;
+  height: 2px;
+}
+
+#seekbar{
+    margin: 0px 10px;
+    border: 1px solid var(--ftclr1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    /* background-color: var(--ftclr2); */
+    height: 5px;
+    width: 90%;
+    cursor: pointer;
+}
+#circle{
+    position: relative;
+    background-color: var(--ftclr1);
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    left: 0%;
+    transition:left 0.5s;
+}
+
+
+#volume{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+
+
+
+
+#trendingSongs {
+    width: 95%;
+    overflow-x: scroll;
+}
+
+#trendingSongs::-webkit-scrollbar {
+    display: none;
+}
+
+#trendingSongs ul {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+#trendingSongs ul li {
+    list-style: none;
+    /* border: 1px solid var(--ftclr1); */
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px;
+}
+
+#trendingSongs ul li img {
+    height: 200px;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1300px) {
+    main {
+        width: unset;
+    }
+
+    .right p {
+        display: none;
+
+    }
+
+    #Hright1 {
+        display: none;
+
+    }
+
+    #hamburger {
+        display: flex;
+    }
+
+    section {
+        width: 73%;
+    }
+
+    aside {
+        width: 25%;
+    }
+
+}
+
+@media (max-width: 1020px) {
+
+
+    #Hright2 {
+        display: none;
+
+    }
+
+    #aside2 {
+        height: 400px;
+    }
+}
+
+@media (max-width: 820px) {
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    #player {
+
+        width: 90%;
+    }
+
+    aside {
+        width: 95%;
+    }
+
+    section {
+        width: 95%;
+    }
+
+    #aside2 {
+        height: 470px;
+    }
+
+}
+
+@media (max-width: 720px) {
+
+
+    #Hleft2 {
+        width: 300px;
+
+    }
+}
+
+
+@media (max-width: 520px) {
+
+
+    #Hleft2 {
+        display: none;
+
+    }
 }

@@ -17,9 +17,9 @@
 
     <header class="">
         <div class="left">
-            <img src="img/logo.svg" class="icon" alt="Spotify" title="Spotify"   srcset="">
+            <img src="img/logo.svg" class="icon" alt="Spotify" title="Spotify" srcset="">
             <div id="Hleft1" title="Home">
-                <img src="img/home.svg" class="icon" alt=""  srcset="">
+                <img src="img/home.svg" class="icon" alt="" srcset="">
             </div>
             <div id="Hleft2">
                 <img src="img/search.svg" class="icon" title="search" alt="" srcset="">
@@ -45,6 +45,13 @@
                 <div id="login"><button>Log in</button></div>
             </div>
         </div>
+        <div id="hamburger">
+            <div id="tile">
+                <div class="tiles" id="div1"></div>
+                <div class="tiles" id="div2"></div>
+                <div class="tiles" id="div3"></div>
+            </div>
+        </div>
     </header>
 
 
@@ -63,20 +70,99 @@
                 <h3>Your Library</h3>
                 <img src="img/plus.svg" title="Create playlist or Folder" class="icon" alt="" srcset="">
             </div>
+
+
+            <div id="aside2">
+                <ul>
+                </ul>
+            </div>
+
+
+            <footer>
+                <div>
+                    <a href="">Legal</a>
+                    <a href="">Safety & Privacy Center</a>
+                    <a href="">Privacy Policy</a>
+                    <a href="">Cookies</a>
+                    <a href="">About Ads</a>
+                    <a href="">Accessiblity</a>
+                </div>
+
+                <span id="langbtn">
+                    <img src="img/language.svg" class="icon" alt="" srcset=""><button>English</button>
+                </span>
+
+            </footer>
         </aside>
 
         <!-- mainsection -->
 
 
         <section>
-            <h2>Trending Song</h2>
+            <div id="section1">
+                <h2>Trending Song</h2>
+                <button>Show all</button>
+            </div>
+
+            <div id="player">
+                <div id="songinfo">
+                    <img src="img/cover.jpg" alt="Song Cover" class="cover">
+                    <div id="songdetail">
+                        <h3>Song Title</h3>
+                        <p>Artist Name</p>
+                    </div>
+
+                    <div id="cross" title="Close">
+                        <p>X</p>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div id="playbtns">
+                        <img id="prevbtn" src="img/prevsong.svg" class="icon" alt="" srcset="">
+                        <img id="pausebtn" src="img/pause.svg" class="icon" alt="" srcset="">
+                        <img id="nextbtn" src="img/nextsong.svg" class="icon" alt="" srcset="">
+                    </div>
+                    <div id="seekVolume">
+
+                        <p id="duration">00:00</p>
+                        <div id="seekbar">
+                            <div id="circle">
+
+                            </div>
+                        </div>
+
+
+                        <p id="currentTime">00:00</p>
+
+
+                        <div id="volume">
+                            <img id="volimg" src="img/volume.svg" class="icon" alt="" srcset="">
+                            <input id="volrange" type="range" min="0" max="100" value="50">
+                            <p id="volValue">50%</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="trendingSongs">
+                <ul>
+                    <li>
+                        <img src="img/cover.jpg" alt="Song Cover" class="cover">
+                        <div class="songdetails">
+                            <h3>Song Title 1</h3>
+                            <p>Artist Name 1</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
 
         </section>
 
     </main>
 
 
-
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

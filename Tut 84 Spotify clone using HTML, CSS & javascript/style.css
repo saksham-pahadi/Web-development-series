@@ -10,6 +10,26 @@
     --bg4: #2d2c2c;
     --ftclr1: white;
     --ftclr2: #adabab;
+    --spotifygreen:#53cd53;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #444;
+    border-top: 2px solid var(--ftclr1);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
 * {
@@ -17,16 +37,23 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-h2,h3,h4,p{
+
+h2,
+h3,
+h4,
+p {
     cursor: default;
 }
+
 body {
     background-color: var(--bg1);
     color: var(--ftclr1);
     position: relative;
 }
 
-img,button,a{
+img,
+button,
+a {
     cursor: pointer;
 }
 
@@ -413,7 +440,8 @@ section {
     align-items: center;
     gap: 10px;
 }
-#cross{
+
+#cross {
     position: relative;
     top: -20px;
     right: 5px;
@@ -429,8 +457,13 @@ section {
     gap: 10px;
     width: 100%;
 }
-#songdetail{
-width: 80%;
+
+#songdetail {
+    width: 80%;
+    
+}
+#songdetail > h3{
+    overflow-x: hidden;
 }
 
 #songinfo img {
@@ -438,7 +471,7 @@ width: 80%;
     border-radius: 10px;
 }
 
-.controls{
+.controls {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -455,21 +488,36 @@ width: 80%;
     justify-content: center;
     gap: 10px;
 }
-#seekVolume{
+
+#seekVolume {
     gap: 10px;
     display: flex;
-    width: 98%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#seekinfo{
+    width: 80%;
+    display: flex;
     align-items: center;
 }
-#volValue{
-    width: 45px;
-}
-input[type="range"] {
-  cursor: pointer;
-  height: 2px;
+#seekVolume > p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
 }
 
-#seekbar{
+#volValue {
+    width: 45px;
+}
+
+input[type="range"] {
+    cursor: pointer;
+    height: 2px;
+}
+
+#seekbar {
     margin: 0px 10px;
     border: 1px solid var(--ftclr1);
     border-radius: 10px;
@@ -480,18 +528,19 @@ input[type="range"] {
     width: 90%;
     cursor: pointer;
 }
-#circle{
+
+#circle {
     position: relative;
     background-color: var(--ftclr1);
     height: 15px;
     width: 15px;
     border-radius: 50%;
     left: 0%;
-    transition:left 0.5s;
+    transition:all left 0.5s;
 }
 
 
-#volume{
+#volume {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -524,12 +573,37 @@ input[type="range"] {
     border-radius: 10px;
     width: 200px;
     padding: 10px;
+    margin: 10px;
+    transition:all 1s;
+}
+#trendingSongs ul li:hover{
+    /* border: 1px solid var(--ftclr1); */
+    background-color: var(--bg4);
+    box-shadow:inset -2px -2px 3px var(--ftclr2), -2px -2px 3px var(--bg1);
+    /* transition:all 2s; */
 }
 
-#trendingSongs ul li img {
+#trendingSongs ul li >img {
     height: 200px;
     border-radius: 8px;
 }
+.songdetails{
+    display: flex;
+}
+
+.hoverplay{
+    position: relative;
+    left: 40px;
+    opacity: 0; 
+    background-color: var(--spotifygreen);
+    border-radius: 45%;
+    height: 25px;
+    padding: 10px;
+    /* box-shadow: 0px 0px 5px lightgreen; */
+    bottom: 50px;
+    transition:all 0.2s;
+}
+
 
 
 
@@ -616,6 +690,18 @@ input[type="range"] {
         width: 300px;
 
     }
+    #volume{
+        width: 10%;
+    }
+    #volrange{
+       display: none;
+    }
+    #volValue{
+        display: none;
+    }
+    #player{
+        margin-top: 0;
+    }
 }
 
 
@@ -623,6 +709,17 @@ input[type="range"] {
 
 
     #Hleft2 {
+        display: none;
+
+    }
+}
+@media (max-width: 420px) {
+
+#volume{
+
+    display: none;
+}
+    #volimg {
         display: none;
 
     }

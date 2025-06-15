@@ -1,19 +1,46 @@
 console.log("lets write some javascript");
 let currentSong = new Audio();
 let songs = [];
+let trendingSongs = [];
+let globalsongs = [];
+let viewalltrendingsongs = document.querySelector("#section1 button");
+let viewallglobalsongs = document.querySelector("#section2 button");
+
+let trendingsongsdiv=document.querySelector("section #trendingSongs");
+let globalsongsdiv=document.querySelector("section #globalsongs");
+
+let folder = 'songs';
+
 let songinfo = [];
+let trendingsonginfo = [];
+let globalsonginfo = [];
 let audio = new Audio();
 let duration = document.getElementById("duration");
 
 let play = document.getElementById("playbtns").getElementsByTagName("img")[1];
 
 let songUL = document.querySelector("#aside2").getElementsByTagName("ul")[0];
+let trendingsongUL = document.querySelector("#trendingSongs").getElementsByTagName("ul")[0];
+let globalsongUL = document.querySelector("#globalsongs").getElementsByTagName("ul")[0];
 
 let currentTime = document.getElementById("currentTime");
 let vol = document.getElementById("volrange");
 let volValue = document.getElementById("volValue");
 let tempvol;
-console.log(vol.value);
+let hamburger = document.getElementById("hamburger");
+let hamburgeroptions = document.createElement("div");
+hamburgeroptions.classList.add("ham-div");
+hamburgeroptions.innerHTML = `<ul id="hamburgerul">
+<div id="cancle">X</div>
+                    <li id="hmul1" ><a href="#">Premium</a></li>
+                    <li id="hmul2" ><a href="#">Sign up</a></li>
+                    <li id="hmul3" ><a href="#">Log in</a></li>
+                   <li id="hmul4"><a href="#">Your Library</a></li>
+                   <li id="hmul5" ><a href="#">Download</a></li>
+                   <li id="hmul6" ><a href="#">Support</a></li> 
+                </ul>`;
+hamburger.after(hamburgeroptions);
+console.log(hamburgeroptions);
 
 
 // Function to convert seconds to minutes in the format mm:ss
@@ -23,11 +50,24 @@ function convertSecondsToMinutes(seconds) {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
 }
 
-// var playbtn;
+//function for scroll
+function smoothScrollTo(target) {
+    const element = document.querySelector(target);
+    if (element) {
+        window.scrollTo({
+            top: element.offsetTop,
+            behavior: 'smooth'
+        });
+        console.log("scrolled...!");
+    } else {
+        console.error('Element not found:', target);
+    }
+}
+
 
 async function getSongs() {
 
-    let a = await fetch(`/songs`);
+    let a = await fetch(`/${folder}`);
     // console.log(a);
     let response = await a.text();
     let div = document.createElement("div");
@@ -37,7 +77,7 @@ async function getSongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1]);
+            songs.push(element.href.split(`/${folder}/`)[1]);
         }
     }
 
@@ -46,7 +86,7 @@ async function getSongs() {
 };
 
 async function getSongs2() {
-    const apiUrl = "https://api.github.com/repos/saksham-pahadi/Web-development-series/contents/Tut%2084%20Spotify%20clone%20using%20HTML%2C%20CSS%20%26%20javascript/songs";
+    const apiUrl = `https://api.github.com/repos/saksham-pahadi/Web-development-series/contents/Tut%2084%20Spotify%20clone%20using%20HTML%2C%20CSS%20%26%20javascript/${folder}`;
 
     try {
         const response = await fetch(apiUrl);
@@ -63,7 +103,8 @@ async function getSongs2() {
                 url: file.download_url
             }));
 
-        // console.log("Fetched songs:", songs);
+        console.log("Fetched songs:");
+        // console.log(songs);
         return songs;
 
     } catch (error) {
@@ -72,28 +113,30 @@ async function getSongs2() {
 }
 
 async function getSongArray() {
-    console.log(songs.length);
 
-    songs = await getSongs2();
+    songsUrls = await getSongs2();
+    console.log("songs in song array:")
     // console.log(songs)
-    // let URL=songs[1].url;
     let URL = [];
-    for (let index = 0; index < songs.length; index++) {
-        URL.push(songs[index].url)
+    //  URL=songs[1].url;
+    for (let index = 0; index < songsUrls.length; index++) {
+        URL.push(songsUrls[index].url)
 
     }
+    console.log("URL")
     // console.log(URL)
 
     let AURL = [];
     for (let index = 0; index < URL.length; index++) {
-        AURL.push(`https://github.com/saksham-pahadi/Web-development-series/blob/main/Tut%2084%20Spotify%20clone%20using%20HTML%2C%20CSS%20%26%20javascript/songs/${URL[index].split("/songs/")[1]}?raw=true`)
+        AURL.push(`https://github.com/saksham-pahadi/Web-development-series/blob/main/Tut%2084%20Spotify%20clone%20using%20HTML%2C%20CSS%20%26%20javascript/${folder}/${URL[index].split(`/${folder}/`)[1]}?raw=true`)
 
     }
 
 
 
 
-    //   console.log(AURL);
+    console.log("AURL");
+    // console.log(AURL);
     return AURL;
 }
 
@@ -107,22 +150,61 @@ async function getSongArray() {
 
 
 
+const showallonpage=(content,contentinfo,contentUL,TGI)=>{
+        // trandingsonginfo=songs;
+    for (let index = 0; index < content.length; index++) {
+        //when getting data from API------------------------------------------------------------------------------------------------------------------------>
+        // contentinfo.push(content[index].split(`/${folder}/`)[1].split("?")[0]);
 
+        //when getting data from local storage
+        contentinfo.push(content[index]);
+        // console.log(trendingSongs[index])
+
+    }
+    console.log(contentinfo);
+
+    let j = 0;
+    for (const tSongs of contentinfo) {
+        // console.log("Song :"+song.replaceAll("%20"," "));
+        let songTitle = tSongs.split("-")[0].replaceAll("%20", " ");
+
+        // console.log("Song Title :"+songTitle.replaceAll("%20"," "));
+        let artist = tSongs.split("-")[1];
+
+        // console.log("Artist :"+artist.replaceAll("%20"," "));
+        let artistName = artist.split(".")[0].replaceAll("%20", " ").replaceAll("_", ". ");
+        // console.log("Artist Name :"+artistName.replaceAll("%20"," "));
+
+        contentUL.innerHTML = contentUL.innerHTML + `<li class="hoverLi" id="${TGI}s${j}">
+                        <img src="img/cover.jpg" alt="Song Cover" class="cover">
+                        <div class="songdetails">
+                            <div>
+                                <h3>${songTitle}</h3>
+                                <p>${artistName}</p>
+                            </div>
+
+                            <img class="hoverplay" id="h${TGI}s${j}" src="img/hoverplay.svg" alt="">
+                        </div>
+                    </li>`;
+        j++;
+    }
+
+    }
 
 
 
 
 const playMusic = (track) => {
     console.log("Playing track: " + track);
-    // audio = new Audio("/songs/" + track)
-    audio = new Audio(track)
+    audio = new Audio(`/${folder}/` + track)  // when getting data from local storage
+    // audio = new Audio(track)  //when getting data from API-------------------------------------------------------------------------------------------------------->
     audio.volume = vol.value / 100;
     play.src = "/img/pause.svg";
-    try{
+    try {
 
         audio.play();
     }
-    catch(err){
+    catch (err) {
         console.log(err)
     }
 
@@ -131,6 +213,75 @@ const playMusic = (track) => {
 
     return audio;
 };
+
+const playonclick=(content,contentLI,givenfolder,TGI)=>{
+//Attache event to each trending song cover
+    Array.from(contentLI).forEach(e => {
+        e.addEventListener("click", () => {
+            folder = givenfolder;
+            if (audio.played) {
+
+                audio.pause();
+
+            }
+
+            // duration.innerText = convertSecondsToMinutes(Math.floor(audio.duration));
+
+            document.getElementById("player").style.visibility = "visible";
+
+            // console.log(e.querySelector("h3").innerHTML);
+            document.getElementById("songdetail").innerHTML = `<h3>Title : ${e.querySelector("h3").innerHTML}</h3> <p>Artist : ${e.querySelector("p").innerHTML}</p>`;
+            // duration.innerText = "Loading...";
+            // currentTime.innerText = "0:00";
+
+
+
+
+            // let currentplaying = e.querySelector("#i");
+            // currentplaying.src = "/img/pause.svg";
+            // console.log(currentplaying)
+
+            console.log(e);
+            currentSong = content[e.id.split(`${TGI}s`)[1]];
+            console.log("Current Song :" + e.querySelectorAll("h3").innerHTML);
+            playMusic(currentSong);
+            console.log("Playing..." + e.querySelector("h3").innerHTML.split(":")[1]);//playing.. Song Name
+            play.src = "/img/pause.svg";
+        })
+
+        e.addEventListener("mouseenter", () => {
+            let hoverplay = document.getElementById(`h${e.id}`);
+
+            hoverplay.style.bottom = "60px";
+            hoverplay.style.opacity = "1";
+            // console.log(e);
+        })
+        e.addEventListener("mouseleave", () => {
+            let hoverplay = document.getElementById(`h${e.id}`);
+            hoverplay.style.bottom = "45px";
+            hoverplay.style.opacity = "0";
+            // console.log(hoverplay);
+        })
+    });
+}
+
+
+const showall=(button,div,ul)=>{
+         button.addEventListener("click", () => {
+        ul.classList.toggle("wrap");
+        div.classList.toggle("height200vh")
+        div.classList.toggle("minheight300px")
+        console.log(button.innerText);
+        if (button.innerText == "Show all") {
+            button.innerText = "Show less"
+           
+        }
+        else if (button.innerText == "Show less") {
+            button.innerText = "Show all";
+        }
+    })
+
+    }
 
 
 
@@ -141,19 +292,48 @@ const playMusic = (track) => {
 (async function () {
 
 
-    //get the songs from the server
-    songs = await getSongArray();
+    //when getting data from API------------------------------------------------------------------------------------------------------------------------------>
+    // songs=await getSongArray(); 
+    // folder='trendingsongs';
+    // trendingSongs = await getSongArray();
+
+    //get the songs from the local storage
+    songs = await getSongs();
+    folder = 'trendingsongs';
+    trendingSongs = await getSongs();
+    folder = 'globalbest';
+    globalsongs = await getSongs();
+
+
+    console.log("songs");
     console.log(songs);
+    console.log("trending songs");
+    console.log(trendingSongs);
+    console.log("global songs");
+    console.log(globalsongs);
+
+
+
+
+
+
+    //show all the song in the library
+
     // songinfo=songs;
     for (let index = 0; index < songs.length; index++) {
-        songinfo.push(songs[index].split("/songs/")[1].split("?")[0]);
+
+        //when getting data from API--------------------------------------------------------------------------------------------------------------------------->
+        // songinfo.push(songs[index].split("/songs/")[1].split("?")[0]);
+
+        //when getting data from local
+        songinfo.push(songs[index]);
+        console.log(songs[index])
 
     }
-    console.log(songinfo);
+    // console.log(songinfo);
 
 
-    //show all the song in the playlist
-    //  songUL = document.querySelector("#aside2").getElementsByTagName("ul")[0]; 
+
     let i = 0;
     for (const song of songinfo) {
         // console.log("Song :"+song.replaceAll("%20"," "));
@@ -179,11 +359,13 @@ const playMusic = (track) => {
         i++;
     }
 
-    //Attache to event listener to each song
+
+    //Attache to event listener to each library song
     let songlist = document.querySelectorAll("#aside2 ul li");
     Array.from(songlist).forEach(e => {
 
         e.addEventListener("click", element => {
+            folder = "songs";
             if (audio.played) {
                 console.log(audio.played)
                 audio.pause();
@@ -213,19 +395,57 @@ const playMusic = (track) => {
             play.src = "/img/pause.svg";
 
         })
+
     });
+
+
+    
+
+
+
+
+
+
+    //show all the song in the trending songs
+
+    showallonpage(trendingSongs,trendingsonginfo,trendingsongUL,"t");
+    
+    
+    //show all the song in the global best songs
+    
+    showallonpage(globalsongs,globalsonginfo,globalsongUL,"g");
+
+    
+    
+    
+    
+    //Attache event to each trending song cover
+    let hoverLi = document.querySelectorAll(`#trendingSongs ul li`);
+    console.log(hoverLi);
+    playonclick(trendingSongs,hoverLi,"trendingSongs","t");
+    
+    
+    
+    //Attache event to each global best song cover
+    let globalhoverLi = document.querySelectorAll("#globalsongs ul li");
+    console.log(globalhoverLi)
+    playonclick(globalsongs,globalhoverLi,"globalbest","g");
+
+
+
+
 
     // Attache event listner to play btn
 
     play.addEventListener("click", () => {
         if (audio.paused) {
             audio.play();
-            console.log("Continue... " + audio.src.split("/songs/")[1].split("-")[0].replaceAll("%20", " "))
+            console.log("Continue... " + audio.src.split(`/${folder}/`)[1].split("-")[0].replaceAll("%20", " "))
             play.src = "/img/pause.svg";
         }
         else {
             audio.pause();
-            console.log(audio.src.split("/songs/")[1].split("-")[0].replaceAll("%20", " ") + "Stopped");
+            console.log(audio.src.split(`/${folder}/`)[1].split("-")[0].replaceAll("%20", " ") + "Stopped");
             play.src = "/img/play.svg";
         }
     });
@@ -237,7 +457,7 @@ const playMusic = (track) => {
     closebtn.addEventListener("click", () => {
         player.style.visibility = "hidden";
         audio.pause();
-        console.log(audio.src.split("/songs/")[1].split("-")[0].replaceAll("%20", " ") + "Closed");
+        console.log(audio.src.split(`/${folder}/`)[1].split("-")[0].replaceAll("%20", " ") + "Closed");
 
     });
 
@@ -264,7 +484,7 @@ const playMusic = (track) => {
         }
 
         currentTime.innerText = convertSecondsToMinutes(Math.floor(audio.currentTime));
-        circle.style.left = ((audio.currentTime / audio.duration) * 100) - 2 + "%";
+        circle.style.left = ((audio.currentTime / audio.duration) * 100) - 1 + "%";
         // console.log(audio.duration)
 
         // console.log(!(audio.duration==NaN)) 
@@ -303,48 +523,140 @@ const playMusic = (track) => {
     let previous = document.getElementById("prevbtn");
     previous.addEventListener("click", () => {
         console.log("prev clicked");
-        audio.pause();
-        let index = songs.indexOf(currentSong);
-        console.log(songs, index);
-        console.log(index - 1 >= 0);
-        console.log(songs.length);
-        console.log(index - 1);
+        console.log(folder, "folder");
 
-        if (index - 1 >= 0) {
-            console.log(songs[index - 1]);
-            playMusic(songs[index - 1]);
-            currentSong = songs[index - 1];
-            // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
-            console.log(songlist[index - 1].querySelector("h4").innerHTML);
-            document.getElementById("songdetail").innerHTML = `<h3>${songlist[index - 1].querySelector("h4").innerHTML}</h3> <p>${songlist[index - 1].querySelector("p").innerHTML}</p>`;
+        audio.pause();
+        if (folder == "songs") {
+            let index = songs.indexOf(currentSong);
+            // console.log(songs, index);
+            // console.log(index - 1 >= 0);
+            // console.log(songs.length);
+            // console.log(index - 1);
+
+            if (index - 1 >= 0) {
+                console.log(songs[index - 1]);
+                playMusic(songs[index - 1]);
+                currentSong = songs[index - 1];
+                // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
+                console.log(songlist[index - 1].querySelector("h4").innerHTML);
+                document.getElementById("songdetail").innerHTML = `<h3>${songlist[index - 1].querySelector("h4").innerHTML}</h3> <p>${songlist[index - 1].querySelector("p").innerHTML}</p>`;
+            }
+            else {
+                playMusic(currentSong)
+            }
         }
-        else {
-            playMusic(currentSong)
+        else if (folder == "trendingSongs") {
+
+            let index = trendingSongs.indexOf(currentSong);
+            // console.log(trendingSongs, index);
+            // console.log(index - 1 >= 0);
+            // console.log(trendingSongs.length);
+            // console.log(index - 1);
+
+            if (index - 1 >= 0) {
+                console.log(trendingSongs[index - 1]);
+                playMusic(trendingSongs[index - 1]);
+                currentSong = trendingSongs[index - 1];
+                // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
+                console.log(hoverLi[index - 1].querySelector("h3").innerHTML);
+                document.getElementById("songdetail").innerHTML = `<h3>Title : ${hoverLi[index - 1].querySelector("h3").innerHTML}</h3> <p>Artist : ${hoverLi[index - 1].querySelector("p").innerHTML}</p>`;
+            }
+            else {
+                playMusic(currentSong)
+            }
+
+
+        }
+        else if (folder == "globalbest") {
+
+            let index = globalsongs.indexOf(currentSong);
+            // console.log(trendingSongs, index);
+            // console.log(index - 1 >= 0);
+            // console.log(trendingSongs.length);
+            // console.log(index - 1);
+
+            if (index - 1 >= 0) {
+                console.log(globalsongs[index - 1]);
+                playMusic(globalsongs[index - 1]);
+                currentSong = globalsongs[index - 1];
+                // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
+                console.log(globalhoverLi[index - 1].querySelector("h3").innerHTML);
+                document.getElementById("songdetail").innerHTML = `<h3>Title : ${globalhoverLi[index - 1].querySelector("h3").innerHTML}</h3> <p>Artist : ${globalhoverLi[index - 1].querySelector("p").innerHTML}</p>`;
+            }
+            else {
+                playMusic(currentSong)
+            }
+
+
         }
     });
 
-    // play next song
+    //function play next song
     function playnext() {
-        let index = songs.indexOf(currentSong);
-        console.log(index + 1 < songs.length);
-        console.log(songs.length);
-        console.log(index + 1);
+        if (folder == "songs") {
+            let index = songs.indexOf(currentSong);
+            // console.log(index + 1 < songs.length);
+            // console.log(songs.length);
+            // console.log(index + 1);
 
-        if (index + 1 < songs.length) {
-            console.log(songs[index + 1]);
-            playMusic(songs[index + 1]);
-            currentSong = songs[index + 1];
-            console.log(currentSong);
+            if (index + 1 < songs.length) {
+                console.log(songs[index + 1]);
+                playMusic(songs[index + 1]);
+                currentSong = songs[index + 1];
+                console.log(currentSong);
 
-            // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
-            console.log(songlist[index + 1].querySelector("h4").innerHTML);
-            document.getElementById("songdetail").innerHTML = `<h3>${songlist[index + 1].querySelector("h4").innerHTML}</h3> <p>${songlist[index + 1].querySelector("p").innerHTML}</p>`;
+                // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
+                console.log(songlist[index + 1].querySelector("h4").innerHTML);
+                document.getElementById("songdetail").innerHTML = `<h3>${songlist[index + 1].querySelector("h4").innerHTML}</h3> <p>${songlist[index + 1].querySelector("p").innerHTML}</p>`;
+            }
+            else {
+                playMusic(currentSong)
+            }
         }
-        else {
-            playMusic(currentSong)
+        else if (folder == "trendingSongs") {
+            let index = trendingSongs.indexOf(currentSong);
+            // console.log(index + 1 < songs.length);
+            // console.log(songs.length);
+            // console.log(index + 1);
+
+            if (index + 1 < trendingSongs.length) {
+                console.log(trendingSongs[index + 1]);
+                playMusic(trendingSongs[index + 1]);
+                currentSong = trendingSongs[index + 1];
+                console.log(currentSong);
+
+                // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
+                console.log(hoverLi[index + 1].querySelector("h3").innerHTML);
+                document.getElementById("songdetail").innerHTML = `<h3>Title : ${hoverLi[index + 1].querySelector("h3").innerHTML}</h3> <p>Artist : ${hoverLi[index + 1].querySelector("p").innerHTML}</p>`;
+            }
+            else {
+                playMusic(currentSong)
+            }
+        }
+        else if (folder == "globalbest") {
+            let index = globalsongs.indexOf(currentSong);
+            // console.log(index + 1 < songs.length);
+            // console.log(songs.length);
+            // console.log(index + 1);
+
+            if (index + 1 < globalsongs.length) {
+                console.log(globalsongs[index + 1]);
+                playMusic(globalsongs[index + 1]);
+                currentSong = globalsongs[index + 1];
+                console.log(currentSong);
+
+                // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
+                console.log(globalhoverLi[index + 1].querySelector("h3").innerHTML);
+                document.getElementById("songdetail").innerHTML = `<h3>Title :  ${globalhoverLi[index + 1].querySelector("h3").innerHTML}</h3> <p>Artist : ${globalhoverLi[index + 1].querySelector("p").innerHTML}</p>`;
+            }
+            else {
+                playMusic(currentSong)
+            }
         }
 
     }
+
+    // add event on next button
     let next = document.getElementById("nextbtn");
     next.addEventListener("click", () => {
         console.log("Next clicked");
@@ -392,26 +704,45 @@ const playMusic = (track) => {
 
     })
 
-    //Attache event to each trending song cover
-    let hoverLi = document.getElementsByClassName("hoverLi");
-    Array.from(hoverLi).forEach(e => {
+    
 
-        e.addEventListener("mouseenter", () => {
-            let hoverplay = document.getElementById(`m${e.id}`);
 
-            hoverplay.style.bottom = "60px";
-            hoverplay.style.opacity = "1";
-            // console.log(e);
-        })
-        e.addEventListener("mouseleave", () => {
-            let hoverplay = document.getElementById(`m${e.id}`);
-            hoverplay.style.bottom = "45px";
-            hoverplay.style.opacity = "0";
-            // console.log(hoverplay);
-        })
+
+
+    //show all trendins songs 
+    
+    showall(viewalltrendingsongs,trendingsongsdiv,trendingsongUL);
+
+    //show all global songs 
+    
+    showall(viewallglobalsongs,globalsongsdiv,globalsongUL);
+
+
+
+
+
+
+
+    // add events related Hamburger
+    hamburger.addEventListener("click", (e) => {
+        hamburgeroptions.classList.toggle("active");
+        e.stopImmediatePropagation();
     });
+    document.getElementById("cancle").addEventListener("click", () => {
 
+        hamburgeroptions.classList.toggle("active");
+    });
+    document.getElementById("hamburgerul").addEventListener("click", () => {
 
+        // hamburgeroptions.classList.toggle("active");
+    });
+    document.addEventListener("click", () => {
+
+        hamburgeroptions.classList.remove("active");
+    });
+    document.getElementById("hmul4").addEventListener("click", (e) => {
+        smoothScrollTo("footer");
+    })
 
 
 

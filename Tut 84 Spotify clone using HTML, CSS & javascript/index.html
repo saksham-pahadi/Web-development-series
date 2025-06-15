@@ -16,14 +16,24 @@
 
 
     <header class="">
+
         <div class="left">
-            <img src="img/logo.svg" class="icon" alt="Spotify" title="Spotify" srcset="">
+            <div id="hamburger">
+                <div id="tile">
+                    <div class="tiles" id="div1"></div>
+                    <div class="tiles" id="div2"></div>
+                    <div class="tiles" id="div3"></div>
+                </div>
+            </div>
+            
+            <img id="logoimg" src="img/logo.svg" class="icon" alt="Spotify" title="Spotify" srcset="">
+            <img id="logotext" src="img/spotify.png" alt="" srcset="">
             <div id="Hleft1" title="Home">
                 <img src="img/home.svg" class="icon" alt="" srcset="">
             </div>
             <div id="Hleft2">
                 <img src="img/search.svg" class="icon" title="search" alt="" srcset="">
-                <input type="search" placeholder="Search for Artists, Songs, or Podcasts">
+                <input id="search" type="search" placeholder="Search for Artists, Songs, or Podcasts">
                 <p>|</p>
                 <img src="img/browse.svg" class="icon" title="Browse" alt="" srcset="">
 
@@ -45,13 +55,7 @@
                 <div id="login"><button>Log in</button></div>
             </div>
         </div>
-        <div id="hamburger">
-            <div id="tile">
-                <div class="tiles" id="div1"></div>
-                <div class="tiles" id="div2"></div>
-                <div class="tiles" id="div3"></div>
-            </div>
-        </div>
+
     </header>
 
 
@@ -105,43 +109,24 @@
             </div>
 
 
-            <div id="trendingSongs">
+            <div class="minheight300px" id="trendingSongs">
                 <ul>
-                    <li class="hoverLi" id="l0">
-                        <img src="img/cover.jpg" alt="Song Cover" class="cover">
-                        <div class="songdetails">
-                            <div>
-                                <h3>Song Title 1</h3>
-                                <p>Artist Name 1</p>
-                            </div>
 
-                            <img class="hoverplay" id="ml0" src="img/hoverplay.svg" alt="">
-                        </div>
-                    </li>
-                    <li class="hoverLi" id="l1">
-                        <img src="img/cover.jpg" alt="Song Cover" class="cover">
-                        <div class="songdetails">
-                            <div>
-                                <h3>Song Title 1</h3>
-                                <p>Artist Name 1</p>
-                            </div>
 
-                            <img class="hoverplay" id="ml1" src="img/hoverplay.svg" alt="">
-                        </div>
-                    </li>
-                    <li class="hoverLi" id="l2">
-                        <img src="img/cover.jpg" alt="Song Cover" class="cover">
-                        <div class="songdetails">
-                            <div>
-                                <h3>Song Title 1</h3>
-                                <p>Artist Name 1</p>
-                            </div>
-
-                            <img class="hoverplay" id="ml2" src="img/hoverplay.svg" alt="">
-                        </div>
-                    </li>
                 </ul>
             </div>
+            <div id="section2">
+                <h2>Global best Song</h2>
+                <button>Show all</button>
+            </div>
+
+
+            <div class="minheight300px" id="globalsongs">
+                <ul>
+
+                </ul>
+            </div>
+            
             <div id="player">
                 <div id="songinfo">
                     <img src="img/cover.jpg" alt="Song Cover" class="cover">

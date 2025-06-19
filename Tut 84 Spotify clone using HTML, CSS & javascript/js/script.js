@@ -1,13 +1,21 @@
 console.log("lets write some javascript");
 let currentSong = new Audio();
 let songs = [];
+let songCover = ["https://c.saavncdn.com/401/Loveyatri-A-Journey-Of-Love-Hindi-2018-20181003-500x500.jpg","https://c.saavncdn.com/879/Alag-Aasmaan-Unknown-2020-20200716212927-500x500.jpg","https://c.saavncdn.com/686/Ek-Villain-Hindi-2014-500x500.jpg","https://c.saavncdn.com/024/Jab-Tak-Hai-Jaan-Hindi-2012-20190329150717-500x500.jpg","https://c.saavncdn.com/441/Darkhaast-Lofi-Mix-Hindi-2022-20220601131024-500x500.jpg","https://i1.sndcdn.com/artworks-000305238759-tladm4-t500x500.jpg","https://i.scdn.co/image/ab67616d0000b273757a24699f13a78d2d207aa8","https://c.saavncdn.com/748/Farq-hai-Hindi-2020-20201111145244-500x500.jpg","https://upload.wikimedia.org/wikipedia/en/a/a6/Fifty_Fifty_-_The_Beginning_Cupid.png","https://c.saavncdn.com/962/Garmi-From-Street-Dancer-3D--Hindi-2019-20191226105651-500x500.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6bBwQMfJRB_x_oJ6uaEKTeqmI8NbUBmr3iw&s","https://a10.gaanacdn.com/gn_img/albums/NOXWVRgWkq/OXWVVO70Wk/size_m.webp","https://i.scdn.co/image/ab67616d00001e02c820a9669147be3addd7f221","https://c.saavncdn.com/436/Husn-Hindi-2023-20231129054140-500x500.jpg","https://i1.sndcdn.com/artworks-000394974879-tuburz-t500x500.jpg","https://i.scdn.co/image/ab67616d0000b2731b37836ed90730b00d8f6db8","https://i1.sndcdn.com/artworks-000178696713-pifi3d-t500x500.jpg","https://c.saavncdn.com/836/Malang-Unleash-The-Madness-Hindi-2020-20200619175502-500x500.jpg","https://c.saavncdn.com/810/O-Saki-Saki-From-Batla-House--Hindi-2019-20190715121320-500x500.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFx4R8Sx-6UHJKZNIT5f-g_dBxphI8yT6h6Q&s"];
 let trendingSongs = [];
+let trendingSongsCover = ["https://c.saavncdn.com/983/Choo-Lo-Cover-Hindi-2023-20230521105958-500x500.jpg", "https://upload.wikimedia.org/wikipedia/en/3/3e/Powfu_-_Death_Bed.png", "https://c.saavncdn.com/561/Mere-Wala-Sardar-Single-Punjabi-2018-20180918184911-500x500.jpg", "https://i.scdn.co/image/ab67616d0000b273b7ec7a1049396ec13a9b963d", "https://i.scdn.co/image/ab67616d0000b273f379a5ee7b96ffb5a2477e81", "https://i.scdn.co/image/ab67616d00001e023b37f6de72015eefce8ee5d3", "https://c.saavncdn.com/489/Rabb-Wangu-Punjabi-2019-20220217131850-500x500.jpg", "https://c.saavncdn.com/264/Ranjha-From-Shershaah--Hindi-2021-20210804173407-500x500.jpg", "https://i.scdn.co/image/ab67616d0000b2738d2a7093606bb5efd9aa6007", "https://c.saavncdn.com/804/Saiyyan-Trending-Version-Hindi-2023-20230511151041-500x500.jpg", "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/61/b3/49/61b349fe-df23-0a0a-37c9-7f0cf8d8f2fc/cover.jpg/600x600bf-60.jpg", "https://i.scdn.co/image/ab67616d00001e021d28a357e2303d79538e76c5","https://c.saavncdn.com/760/Sapphire-English-2025-20250604163233-500x500.jpg", "https://i1.sndcdn.com/artworks-WWvTQsVwwR1Px9iE-O1sgTg-t500x500.jpg", "https://i.scdn.co/image/ab67616d0000b273e939137c68673c5d5d9979c2", "https://i1.sndcdn.com/artworks-8BwOB26JAyA2xaH1-M5YjVg-t500x500.jpg", "https://i.scdn.co/image/ab67616d0000b273f806a7942ff458ea7653edd7", "https://c.saavncdn.com/799/Soulmate-Hindi-2024-20240404153039-500x500.jpg", "https://c.saavncdn.com/119/Tere-Hawaale-From-Laal-Singh-Chaddha-Hindi-2022-20220804093945-500x500.jpg", "https://i.scdn.co/image/ab67616d0000b27382549c22cd3c6e03351bd1c5"];
+console.log(trendingSongsCover);
+
 let globalsongs = [];
+let globalSongsCover = ["https://upload.wikimedia.org/wikipedia/en/8/8f/AThousand_Years.jpg", "https://c.saavncdn.com/050/Broken-Angel-English-2011-20180305091944-500x500.jpg", "https://i1.sndcdn.com/artworks-000174898618-vsdrz9-t500x500.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn-dpPzuMu_WSd48J75g_rhJqMLBmG94hi5Q&s", "https://i1.sndcdn.com/artworks-000034182341-ayzf0e-t500x500.jpg", "https://i1.sndcdn.com/artworks-wTB0CGZSy5yPshXJ-ZKXs3Q-t500x500.jpg", "https://i1.sndcdn.com/artworks-000663680482-b1iz70-t500x500.jpg", "https://c.saavncdn.com/273/Love-Is-Gone-Acoustic--English-2019-20191107015219-500x500.jpg", "https://i.scdn.co/image/ab67616d0000b273ad28ff16d908831ff9150c77", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgTBHs7o1MLPcAg5nOMvpf-JN-7Bsv-moWBA&s", "https://i.scdn.co/image/ab67616d0000b273e2e1bc7363172a59742e3be1", "https://i.scdn.co/image/ab67616d0000b273e17498b2a89c000a29bbd209", "https://i.scdn.co/image/ab67616d0000b273dd83bbcefe1e211605ac144e", "https://upload.wikimedia.org/wikipedia/en/6/69/Clean_Bandit_-_Rockabye_%28feat._Sean_Paul_%26_Anne-Marie%29.png", "https://i.scdn.co/image/ab67616d00001e021d28a357e2303d79538e76c5","https://i1.sndcdn.com/artworks-WWvTQsVwwR1Px9iE-O1sgTg-t500x500.jpg","https://i.scdn.co/image/ab67616d0000b273927f72f3739f256fb01d1470","https://i.scdn.co/image/ab67616d0000b273f806a7942ff458ea7653edd7","https://upload.wikimedia.org/wikipedia/en/d/dc/Justin_Bieber_-_Sorry_%28Official_Single_Cover%29.png","https://c.saavncdn.com/895/Stay-English-2021-20210706223809-500x500.jpg","https://upload.wikimedia.org/wikipedia/en/8/81/Keshatakeitoff200.jpg","https://i1.sndcdn.com/artworks-000183073123-pw4bno-t500x500.jpg","https://i.scdn.co/image/ab67616d0000b2738792c3e96f8ab97a767c5d0c"];
+console.log(trendingSongsCover);
+
+
 let viewalltrendingsongs = document.querySelector("#section1 button");
 let viewallglobalsongs = document.querySelector("#section2 button");
 
-let trendingsongsdiv=document.querySelector("section #trendingSongs");
-let globalsongsdiv=document.querySelector("section #globalsongs");
+let trendingsongsdiv = document.querySelector("section #trendingSongs");
+let globalsongsdiv = document.querySelector("section #globalsongs");
 
 let folder = 'songs';
 
@@ -150,8 +158,8 @@ async function getSongArray() {
 
 
 
-const showallonpage=(content,contentinfo,contentUL,TGI)=>{
-        // trandingsonginfo=songs;
+const showallonpage = (content, contentinfo, contentUL, Cover, TGI) => {
+    // trandingsonginfo=songs;
     for (let index = 0; index < content.length; index++) {
         //when getting data from API------------------------------------------------------------------------------------------------------------------------>
         // contentinfo.push(content[index].split(`/${folder}/`)[1].split("?")[0]);
@@ -175,8 +183,16 @@ const showallonpage=(content,contentinfo,contentUL,TGI)=>{
         let artistName = artist.split(".")[0].replaceAll("%20", " ").replaceAll("_", ". ");
         // console.log("Artist Name :"+artistName.replaceAll("%20"," "));
 
+        let songcover;
+        if (Cover[j] == undefined) {
+            songcover = "img\\cover.jpg";
+        }
+        else {
+            songcover = Cover[j];
+        }
+
         contentUL.innerHTML = contentUL.innerHTML + `<li class="hoverLi" id="${TGI}s${j}">
-                        <img src="img/cover.jpg" alt="Song Cover" class="cover">
+                        <img src="${songcover}" alt="Song Cover" class="cover">
                         <div class="songdetails">
                             <div>
                                 <h3>${songTitle}</h3>
@@ -184,12 +200,35 @@ const showallonpage=(content,contentinfo,contentUL,TGI)=>{
                             </div>
 
                             <img class="hoverplay" id="h${TGI}s${j}" src="img/hoverplay.svg" alt="">
+                            
                         </div>
                     </li>`;
+
+        const jsmediatags = window.jsmediatags;
+        jsmediatags.read(content, {
+            onSuccess: function (tag) {
+                console.log(tag);
+                const data = tag.tags.picture.data;
+                const format = tag.tags.picture.format;
+                let base64String = "";
+                for (let index = 0; index < data.length; index++) {
+                    base64String += String.fromCharCode(data[index]);
+
+                }
+
+                document.querySelector(`#h${TGI}s${j}`).style.backgroundImage = `url(data:${format};base64,${window.btoa(base64String)})`;
+
+
+
+            },
+            onerror: function (error) {
+                console.log(error);
+            }
+        })
         j++;
     }
 
-    }
+}
 
 
 
@@ -214,10 +253,19 @@ const playMusic = (track) => {
     return audio;
 };
 
-const playonclick=(content,contentLI,givenfolder,TGI)=>{
-//Attache event to each trending song cover
+const playonclick = (content, contentLI, givenfolder, TGI) => {
+    //Attache event to each trending song cover
     Array.from(contentLI).forEach(e => {
         e.addEventListener("click", () => {
+            console.log("event");
+            //             let cover;
+            //             if(e.querySelector("img").src==undefined){
+            // cover="img\cover.jpg";
+            //             }
+            //             else{
+            //                 cover=`${e.querySelector("img").src}`;
+            //             }
+            //             console.log(e.querySelector("img").src);
             folder = givenfolder;
             if (audio.played) {
 
@@ -228,8 +276,11 @@ const playonclick=(content,contentLI,givenfolder,TGI)=>{
             // duration.innerText = convertSecondsToMinutes(Math.floor(audio.duration));
 
             document.getElementById("player").style.visibility = "visible";
+        
+
 
             // console.log(e.querySelector("h3").innerHTML);
+            document.getElementById("playerCover").src = `${e.querySelector("img").src}`;
             document.getElementById("songdetail").innerHTML = `<h3>Title : ${e.querySelector("h3").innerHTML}</h3> <p>Artist : ${e.querySelector("p").innerHTML}</p>`;
             // duration.innerText = "Loading...";
             // currentTime.innerText = "0:00";
@@ -266,22 +317,22 @@ const playonclick=(content,contentLI,givenfolder,TGI)=>{
 }
 
 
-const showall=(button,div,ul)=>{
-         button.addEventListener("click", () => {
+const showall = (button, div, ul) => {
+    button.addEventListener("click", () => {
         ul.classList.toggle("wrap");
         div.classList.toggle("height200vh")
         div.classList.toggle("minheight300px")
         console.log(button.innerText);
         if (button.innerText == "Show all") {
             button.innerText = "Show less"
-           
+
         }
         else if (button.innerText == "Show less") {
             button.innerText = "Show all";
         }
     })
 
-    }
+}
 
 
 
@@ -345,11 +396,18 @@ const showall=(button,div,ul)=>{
         // console.log("Artist :"+artist.replaceAll("%20"," "));
         let artistName = artist.split(".")[0].replaceAll("%20", " ").replaceAll("_", ". ");
         // console.log("Artist Name :"+artistName.replaceAll("%20"," "));
+        let songcover;
+        if (songCover[i] == undefined) {
+            songcover = "img\\cover.jpg";
+        }
+        else {
+            songcover = songCover[i];
+        }
 
         songUL.innerHTML = songUL.innerHTML + `<li id="${i}"> 
        
        
-                        <img src="img/music.svg" class="icon" alt="" title="Songs" srcset="">
+                        <img src="${songcover}" class="" alt="" title="Songs" srcset="">
                         <div>
                             <h4>Title : ${songTitle}</h4>
                             <p>Artist : ${artistName}</p>
@@ -375,6 +433,7 @@ const showall=(button,div,ul)=>{
             // duration.innerText = convertSecondsToMinutes(Math.floor(audio.duration));
 
             document.getElementById("player").style.visibility = "visible";
+            document.getElementById("playerCover").src = `${e.querySelector("img").src}`;
 
             console.log(e.querySelector("h4").innerHTML);
             document.getElementById("songdetail").innerHTML = `<h3>${e.querySelector("h4").innerHTML}</h3> <p>${e.querySelector("p").innerHTML}</p>`;
@@ -399,7 +458,7 @@ const showall=(button,div,ul)=>{
     });
 
 
-    
+
 
 
 
@@ -408,28 +467,28 @@ const showall=(button,div,ul)=>{
 
     //show all the song in the trending songs
 
-    showallonpage(trendingSongs,trendingsonginfo,trendingsongUL,"t");
-    
-    
-    //show all the song in the global best songs
-    
-    showallonpage(globalsongs,globalsonginfo,globalsongUL,"g");
+    showallonpage(trendingSongs, trendingsonginfo, trendingsongUL, trendingSongsCover, "t");
 
-    
-    
-    
-    
+
+    //show all the song in the global best songs
+
+    showallonpage(globalsongs, globalsonginfo, globalsongUL, globalSongsCover, "g");
+
+
+
+
+
     //Attache event to each trending song cover
     let hoverLi = document.querySelectorAll(`#trendingSongs ul li`);
     console.log(hoverLi);
-    playonclick(trendingSongs,hoverLi,"trendingSongs","t");
-    
-    
-    
+    playonclick(trendingSongs, hoverLi, "trendingSongs", "t");
+
+
+
     //Attache event to each global best song cover
     let globalhoverLi = document.querySelectorAll("#globalsongs ul li");
     console.log(globalhoverLi)
-    playonclick(globalsongs,globalhoverLi,"globalbest","g");
+    playonclick(globalsongs, globalhoverLi, "globalbest", "g");
 
 
 
@@ -538,7 +597,15 @@ const showall=(button,div,ul)=>{
                 playMusic(songs[index - 1]);
                 currentSong = songs[index - 1];
                 // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
-                console.log(songlist[index - 1].querySelector("h4").innerHTML);
+                document.getElementById("playerCover").src = `img//cover.jpg`
+                if (songCover[index - 1] == undefined) {
+
+                    document.getElementById("playerCover").src = `img/cover.jpg`
+                }
+                else {
+
+                    document.getElementById("playerCover").src = `${songCover[index - 1]}`
+                }
                 document.getElementById("songdetail").innerHTML = `<h3>${songlist[index - 1].querySelector("h4").innerHTML}</h3> <p>${songlist[index - 1].querySelector("p").innerHTML}</p>`;
             }
             else {
@@ -559,6 +626,15 @@ const showall=(button,div,ul)=>{
                 currentSong = trendingSongs[index - 1];
                 // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
                 console.log(hoverLi[index - 1].querySelector("h3").innerHTML);
+
+                if (trendingSongsCover[index - 1] == undefined) {
+
+                    document.getElementById("playerCover").src = `img/cover.jpg`
+                }
+                else {
+
+                    document.getElementById("playerCover").src = `${trendingSongsCover[index - 1]}`
+                }
                 document.getElementById("songdetail").innerHTML = `<h3>Title : ${hoverLi[index - 1].querySelector("h3").innerHTML}</h3> <p>Artist : ${hoverLi[index - 1].querySelector("p").innerHTML}</p>`;
             }
             else {
@@ -581,6 +657,14 @@ const showall=(button,div,ul)=>{
                 currentSong = globalsongs[index - 1];
                 // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
                 console.log(globalhoverLi[index - 1].querySelector("h3").innerHTML);
+                if (globalSongsCover[index - 1] == undefined) {
+
+                    document.getElementById("playerCover").src = `img/cover.jpg`
+                }
+                else {
+
+                    document.getElementById("playerCover").src = `${globalSongsCover[index - 1]}`
+                }
                 document.getElementById("songdetail").innerHTML = `<h3>Title : ${globalhoverLi[index - 1].querySelector("h3").innerHTML}</h3> <p>Artist : ${globalhoverLi[index - 1].querySelector("p").innerHTML}</p>`;
             }
             else {
@@ -607,6 +691,15 @@ const showall=(button,div,ul)=>{
 
                 // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
                 console.log(songlist[index + 1].querySelector("h4").innerHTML);
+
+                if (songCover[index + 1] == undefined) {
+
+                    document.getElementById("playerCover").src = `img/cover.jpg`
+                }
+                else {
+
+                    document.getElementById("playerCover").src = `${songCover[index + 1]}`
+                }
                 document.getElementById("songdetail").innerHTML = `<h3>${songlist[index + 1].querySelector("h4").innerHTML}</h3> <p>${songlist[index + 1].querySelector("p").innerHTML}</p>`;
             }
             else {
@@ -627,6 +720,14 @@ const showall=(button,div,ul)=>{
 
                 // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
                 console.log(hoverLi[index + 1].querySelector("h3").innerHTML);
+                if (trendingSongsCover[index + 1] == undefined) {
+
+                    document.getElementById("playerCover").src = `img/cover.jpg`
+                }
+                else {
+
+                    document.getElementById("playerCover").src = `${trendingSongsCover[index + 1]}`
+                }
                 document.getElementById("songdetail").innerHTML = `<h3>Title : ${hoverLi[index + 1].querySelector("h3").innerHTML}</h3> <p>Artist : ${hoverLi[index + 1].querySelector("p").innerHTML}</p>`;
             }
             else {
@@ -647,6 +748,14 @@ const showall=(button,div,ul)=>{
 
                 // document.getElementById("songdetail").innerHTML = `<h3>Title : ${currentSong.split("-")[0].replaceAll("%20", " ")}</h3> <p>Artist : ${currentSong.split("-")[1].split(".")[0].replaceAll("%20", " ")}</p>`;
                 console.log(globalhoverLi[index + 1].querySelector("h3").innerHTML);
+                if (globalSongsCover[index + 1] == undefined) {
+
+                    document.getElementById("playerCover").src = `img/cover.jpg`
+                }
+                else {
+
+                    document.getElementById("playerCover").src = `${globalSongsCover[index + 1]}`
+                }
                 document.getElementById("songdetail").innerHTML = `<h3>Title :  ${globalhoverLi[index + 1].querySelector("h3").innerHTML}</h3> <p>Artist : ${globalhoverLi[index + 1].querySelector("p").innerHTML}</p>`;
             }
             else {
@@ -704,18 +813,18 @@ const showall=(button,div,ul)=>{
 
     })
 
-    
+
 
 
 
 
     //show all trendins songs 
-    
-    showall(viewalltrendingsongs,trendingsongsdiv,trendingsongUL);
+
+    showall(viewalltrendingsongs, trendingsongsdiv, trendingsongUL);
 
     //show all global songs 
-    
-    showall(viewallglobalsongs,globalsongsdiv,globalsongUL);
+
+    showall(viewallglobalsongs, globalsongsdiv, globalsongUL);
 
 
 

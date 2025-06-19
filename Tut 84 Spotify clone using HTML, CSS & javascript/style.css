@@ -36,7 +36,9 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    /* filter: invert(1); */
 }
+
 
 h2,
 h3,
@@ -406,6 +408,19 @@ body::-webkit-scrollbar {
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
+    transition: all 200ms;
+}
+#aside2 ul li:hover{
+    position: relative;
+    background-color: var(--bg2);
+    box-shadow: inset -1px -1px 3px var(--ftclr2), -1px -1px 3px var(--bg1);
+    transition: all 200ms;
+
+}
+#aside2 ul li img[title="Songs"]{
+    height: 35px;
+    border-radius: 3px;
+    margin-right: 10px;
 }
 
 
@@ -471,7 +486,7 @@ section {
     flex-direction: column;
     align-items: center;
     position: relative;
-    background: linear-gradient(to bottom, var(--bg4), var(--bg2));
+    background: linear-gradient(to bottom, var(--bg3), var(--bg2));
     min-width: 75%;
     overflow-y: scroll;
 }
@@ -482,6 +497,8 @@ section {
     align-items: center;
     justify-content: space-between;
     margin: 25px 40px;
+    margin-bottom: 10px;
+    margin-left: 10px;
     font-size: 15px;
 }
 
@@ -500,6 +517,10 @@ section {
     top: 74%;
     width: 70%;
     background: linear-gradient(to bottom, var(--bg2), var(--bg4));
+    /* background-image: url(img/cover.jpg); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 150px;
     border-radius: 10px;
     margin: 10px;
@@ -629,7 +650,7 @@ input[type="range"] {
 
 #trendingSongs,#globalsongs {
     width: 97%;
-    background-color: var(--bg4);
+    background-color: transparent;
     border-radius: 10px;
     overflow-x: scroll;
 }
@@ -662,7 +683,8 @@ section::-webkit-scrollbar,#trendingSongs::-webkit-scrollbar,#globalsongs::-webk
 }
 
 #trendingSongs ul li>img,#globalsongs ul li>img {
-    height: 200px;
+    width: 200px;
+
     border-radius: 8px;
 }
 
@@ -867,3 +889,5 @@ section{
 
     }
 }
+
+

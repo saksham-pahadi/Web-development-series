@@ -1,0 +1,16 @@
+{
+  "name": "tut-89-request-response-and-routers-in-express",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

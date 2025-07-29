@@ -1,0 +1,673 @@
+<!-- 
+ You need to install tailwindcss and its CLI tool to compile your CSS. Make sure you have Node.js installed, then run the following commands in your terminal:
+npm install i
+npm run build 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/output.css">
+</head>
+
+<body class="bg-black text-white">
+
+
+<div class="grok fixed bottom-5 right-5 w-[50px] h-[50px] shadow-white grokshadow p-2 rounded-2xl bg-black flex items-center justify-center">
+    <img src="images/grok.svg" alt="" srcset="">
+</div>
+
+
+
+    <div class="flex container w-85/100 mx-auto">
+
+
+
+
+        <!-- first  -->
+
+        <div class="first  w-full max-w-[275px] bg-black h-screen flex flex-col sticky top-0 ">
+            <div
+                class="w-[50px] h-[50px] logo  m-1 flex items-center justify-center  hover:bg-neutral-900 rounded-full  transition-all duration-300">
+                <img src="images/logo.svg" alt="Logo" class="w-[50px] h-[50px] p-[10px]">
+            </div>
+            <div class="sidebar">
+                <ul class="flex flex-col gap-2 text-[20px]  ">
+                    <li
+                        class=" flex font-bold items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/home.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">Home</a>
+                    </li>
+                    <li class=" flex items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/search.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">Explore</a>
+                    </li>
+                    <li class=" flex items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/notification.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">Notification</a>
+                    </li>
+                    <li class=" flex items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/message.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">Message</a>
+                    </li>
+                    <li class=" flex items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/grok.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">Grok</a>
+                    </li>
+                    <li class=" flex items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/communities.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">Communities</a>
+                    </li>
+                    <li class=" flex items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/logo.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">Premium</a>
+                    </li>
+                    <li class=" flex items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/varifyOfgs.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">Varified Orgs</a>
+                    </li>
+                    <li class=" flex items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/profile.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">Profile</a>
+                    </li>
+                    <li class=" flex items-center  hover:bg-neutral-900 rounded-full transition-all duration-300">
+                        <img class="h-[30px] m-2" src="images/more.svg" alt="" srcset="">
+                        <a class="ml-2 sm:hidden xl:block" href="#">More</a>
+                    </li>
+
+                </ul>
+            </div>
+            <button class="bg-white text-black font-semibold text-[20px] rounded-full h-14 m-2 sm:hidden xl:block">Post</button>
+            <button class="bg-white rounded-full h-14 w-14 flex items-center justify-center m-2 sm:flex xl:hidden"><img  class="h-[30px] m-2 p-[2px]" src="images/post.svg" alt="" srcset=""></button>
+            <div
+                class="flex items-center justify-between m-2 hover:bg-neutral-900 rounded-full transition-all duration-300">
+                <img class="w-[40px] h-[40px] m-2" src="images/Picsart_24-02-16_15-03-52-331.png" alt="" srcset="">
+                <div class="sm:hidden xl:block">
+                    <a class="font-bold" href="">Saksham Kushwaha</a>
+                    <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                </div>
+                <img class="w-[35px] h-[35px] m-2 fill-white sm:hidden xl:block" src="images/3dots.svg" alt="" srcset="">
+            </div>
+
+        </div>
+
+
+
+        <!-- second  -->
+
+        <div class="second  w-full bg-black border-[1px] border-x-neutral-500 border-y-black">
+            <div
+                class="flex items-center justify-around  border-b-[0.2px] border-b-neutral-500 h-[60px] bg-transparent-500">
+
+                <div
+                    class="flex justify-center items-center w-1/2 h-1/1 font-bold hover:bg-neutral-900  transition-all duration-300">
+                    <button class=" mt-[15px] ">For you <div class="h-1 bg-blue-700 rounded-full mt-4 mb-0"></div>
+                    </button>
+                </div>
+                <div
+                    class="flex justify-center items-center w-1/2 h-1/1 font-bold text-neutral-600 hover:bg-neutral-900  transition-all duration-300">
+                    <button class="">Following</button>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center justify-between m-2">
+                    <img class="w-[40px] h-[40px] m-3 ml-4" src="images/Picsart_24-02-16_15-03-52-331.png" alt=""
+                        srcset="">
+                    <input type="text" class="w-full text-2xl  text-white p-2 rounded-full focus:outline-none"
+                        placeholder="What's happening?">
+                </div>
+                <div class="flex items-center justify-between  border-b-[0.2px] border-b-neutral-500">
+                    <span class="flex ml-12">
+                        <img class="w-[20px] h-[20px] m-2" src="images/image.svg" alt="" srcset="">
+                        <img class="w-[20px] h-[20px] m-2" src="images/gif.svg" alt="" srcset="">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 32" aria-hidden="true"
+                            class="fill-blue-600 w-[20px] h-[20px] m-2 r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-1nao33i r-lwhw9o r-cnnz9e">
+                            <g>
+                                <path
+                                    d="M12.745 20.54l10.97-8.19c.539-.4 1.307-.244 1.564.38 1.349 3.288.746 7.241-1.938 9.955-2.683 2.714-6.417 3.31-9.83 1.954l-3.728 1.745c5.347 3.697 11.84 2.782 15.898-1.324 3.219-3.255 4.216-7.692 3.284-11.693l.008.009c-1.351-5.878.332-8.227 3.782-13.031L33 0l-4.54 4.59v-.014L12.743 20.544m-2.263 1.987c-3.837-3.707-3.175-9.446.1-12.755 2.42-2.449 6.388-3.448 9.852-1.979l3.72-1.737c-.67-.49-1.53-1.017-2.515-1.387-4.455-1.854-9.789-.931-13.41 2.728-3.483 3.523-4.579 8.94-2.697 13.561 1.405 3.454-.899 5.898-3.22 8.364C1.49 30.2.666 31.074 0 32l10.478-9.466">
+                                </path>
+                            </g>
+                        </svg>
+                        <img class="w-[20px] h-[20px] m-2" src="images/options.svg" alt="" srcset="">
+                        <img class="w-[20px] h-[20px] m-2" src="images/emoji.svg" alt="" srcset="">
+                        <img class="w-[20px] h-[20px] m-2" src="images/date.svg" alt="" srcset="">
+                        <img class="w-[20px] h-[20px] m-2" src="images/location.svg" alt="" srcset="">
+                    </span>
+                    <button
+                        class="bg-neutral-500 text-black font-semibold text-[18px] rounded-full w-15/100 h-10 m-2">Post</button>
+                </div>
+            </div>
+            <!-- posts  -->
+            <div class="posts flex border-b-1 border-b-neutral-500">
+                <div class="profile w-1/10">
+                    <img class="w-[40px] h-[40px] m-3 ml-5" src="images/Picsart_24-02-16_15-03-52-331.png" alt=""
+                        srcset="">
+                </div>
+                <div class="postcontent w-9/10">
+                    <div class="info flex items-center justify-between m-2 my-0 mt-2">
+                        <div>
+                            <a class="font-bold" href="">Saksham Kushwaha</a>
+                            <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                            <span class="text-neutral-500"> .2h</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2" src="images/grok.svg" alt="" srcset="">
+                            <img class="w-[20px] h-[20px] m-2" src="images/3dots.svg" alt="" srcset="">
+                        </div>
+
+                    </div>
+                    <p class="text-[18px] m-2 my-0">
+                        As a motivated and detail-oriented IT student, I'm eager to apply my skills and knowledge in real-world settings. Proficient in python, html, css, javascript programming languages, software, or technologies, I'm passionate about web development. Collaborative and quick to learn, I'm excited to contribute to innovative projects and grow as a professional in the tech industry.
+                    </p>
+                    <img class="w-9/10" src="images/Picsart_24-02-16_15-03-52-331.png" alt="" srcset="">
+                    <div class="flex items-center justify-between m-2 my-0 mt-2">
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[25px] h-[25px] m-2 p-[2px] " src="images/comment.svg" alt=""><span>995</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-green-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/repost.svg" alt="">
+                            <p>5.1K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-pink-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/like.svg" alt="">
+                            <p>32K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/reach.svg" alt="">
+                            <p>1.8M</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/bookmark.svg" alt="">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/share.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- posts  -->
+            <div class="posts flex border-b-1 border-b-neutral-500">
+                <div class="profile w-1/10">
+                    <img class="w-[40px] h-[40px] m-3 ml-5" src="images/Picsart_24-02-16_15-03-52-331.png" alt=""
+                        srcset="">
+                </div>
+                <div class="postcontent w-9/10">
+                    <div class="info flex items-center justify-between m-2 my-0 mt-2">
+                        <div>
+                            <a class="font-bold" href="">Saksham Kushwaha</a>
+                            <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                            <span class="text-neutral-500"> .1D</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2" src="images/grok.svg" alt="" srcset="">
+                            <img class="w-[20px] h-[20px] m-2" src="images/3dots.svg" alt="" srcset="">
+                        </div>
+
+                    </div>
+                    <p class="text-[18px] m-2 my-0">
+                        Welcome to LWS – your ultimate destination for mastering the art of coding. Whether you’re a beginner taking your first steps or an experienced developer looking to sharpen your skills, we provide resources, tutorials, and a supportive community to help you grow. Explore interactive lessons, dive into hands-on projects, and unlock the power of coding languages like Python, JavaScript, and more. At LWS, we believe coding is not just a skill, but a creative expression that can shape the future. Start your journey today, and craft your code to perfection!
+                    </p>
+                    <img class="w-9/10" src="https://learnwithsaksham.wordpress.com/wp-content/uploads/2024/11/untitled-design-3-edited.png" alt="" srcset="">
+                    <div class="flex items-center justify-between m-2 my-0 mt-2">
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[25px] h-[25px] m-2 p-[2px] " src="images/comment.svg" alt=""><span>765</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-green-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/repost.svg" alt="">
+                            <p>1.2K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-pink-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/like.svg" alt="">
+                            <p>4K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/reach.svg" alt="">
+                            <p>1k</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/bookmark.svg" alt="">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/share.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- posts  -->
+            <div class="posts flex border-b-1 border-b-neutral-500">
+                <div class="profile w-1/10">
+                    <img class="w-[40px] h-[40px] m-3 ml-5" src="images/Picsart_24-02-16_15-03-52-331.png" alt=""
+                        srcset="">
+                </div>
+                <div class="postcontent w-9/10">
+                    <div class="info flex items-center justify-between m-2 my-0 mt-2">
+                        <div>
+                            <a class="font-bold" href="">Saksham Kushwaha</a>
+                            <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                            <span class="text-neutral-500"> .2D</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2" src="images/grok.svg" alt="" srcset="">
+                            <img class="w-[20px] h-[20px] m-2" src="images/3dots.svg" alt="" srcset="">
+                        </div>
+
+                    </div>
+                    <p class="text-[18px] m-2 my-0">
+                       A full-stack music streaming platform built with modern web technologies, offering real-time audio playback, personalized playlists, user authentication, and a sleek, responsive UI. Designed to enhance the way users discover and enjoy music online.
+                    </p>
+                    <img class="w-9/10" src="images/spotifyProject.png" alt="" srcset="">
+                    <div class="flex items-center justify-between m-2 my-0 mt-2">
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[25px] h-[25px] m-2 p-[2px] " src="images/comment.svg" alt=""><span>95</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-green-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/repost.svg" alt="">
+                            <p>23</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-pink-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/like.svg" alt="">
+                            <p>3.2K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/reach.svg" alt="">
+                            <p>1.2M</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/bookmark.svg" alt="">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/share.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- posts  -->
+            <div class="posts flex border-b-1 border-b-neutral-500">
+                <div class="profile w-1/10">
+                    <img class="w-[40px] h-[40px] m-3 ml-5" src="images/Picsart_24-02-16_15-03-52-331.png" alt=""
+                        srcset="">
+                </div>
+                <div class="postcontent w-9/10">
+                    <div class="info flex items-center justify-between m-2 my-0 mt-2">
+                        <div>
+                            <a class="font-bold" href="">Saksham Kushwaha</a>
+                            <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                            <span class="text-neutral-500"> .2D</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2" src="images/grok.svg" alt="" srcset="">
+                            <img class="w-[20px] h-[20px] m-2" src="images/3dots.svg" alt="" srcset="">
+                        </div>
+
+                    </div>
+                    <p class="text-[18px] m-2 my-0">
+                        A fully responsive video streaming web app inspired by Netflix, built using React.js, Firebase, and TMDB API. Features include user authentication, real-time content browsing, trending movies, and a dynamic UI for a seamless binge-worthy experience.
+                    </p>
+                    <img class="w-9/10" src="images/NetflixProject.png" alt="" srcset="">
+                    <div class="flex items-center justify-between m-2 my-0 mt-2">
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[25px] h-[25px] m-2 p-[2px] " src="images/comment.svg" alt=""><span>35</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-green-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/repost.svg" alt="">
+                            <p>1K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-pink-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/like.svg" alt="">
+                            <p>2K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/reach.svg" alt="">
+                            <p>1.8K</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/bookmark.svg" alt="">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/share.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- posts  -->
+            <div class="posts flex border-b-1 border-b-neutral-500">
+                <div class="profile w-1/10">
+                    <img class="w-[40px] h-[40px] m-3 ml-5" src="images/Picsart_24-02-16_15-03-52-331.png" alt=""
+                        srcset="">
+                </div>
+                <div class="postcontent w-9/10">
+                    <div class="info flex items-center justify-between m-2 my-0 mt-2">
+                        <div>
+                            <a class="font-bold" href="">Saksham Kushwaha</a>
+                            <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                            <span class="text-neutral-500"> .4D</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2" src="images/grok.svg" alt="" srcset="">
+                            <img class="w-[20px] h-[20px] m-2" src="images/3dots.svg" alt="" srcset="">
+                        </div>
+
+                    </div>
+                    <p class="text-[18px] m-2 my-0">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Alias soluta aliquid laboriosam modi, earum ratione
+                        tenetur cumque cum consequatur maxime non maiores molestiae deleniti nemo delectus laborum optio
+                        ab quidem, aspernatur ut! Doloremque, officiis accusantium?
+                    </p>
+                    <img class="w-9/10" src="images/Picsart_24-02-16_15-03-52-331.png" alt="" srcset="">
+                    <div class="flex items-center justify-between m-2 my-0 mt-2">
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[25px] h-[25px] m-2 p-[2px] " src="images/comment.svg" alt=""><span>995</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-green-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/repost.svg" alt="">
+                            <p>5.1K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-pink-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/like.svg" alt="">
+                            <p>32K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/reach.svg" alt="">
+                            <p>1.8M</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/bookmark.svg" alt="">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/share.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- posts  -->
+            <div class="posts flex border-b-1 border-b-neutral-500">
+                <div class="profile w-1/10">
+                    <img class="w-[40px] h-[40px] m-3 ml-5" src="images/Picsart_24-02-16_15-03-52-331.png" alt=""
+                        srcset="">
+                </div>
+                <div class="postcontent w-9/10">
+                    <div class="info flex items-center justify-between m-2 my-0 mt-2">
+                        <div>
+                            <a class="font-bold" href="">Saksham Kushwaha</a>
+                            <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                            <span class="text-neutral-500"> .1W</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2" src="images/grok.svg" alt="" srcset="">
+                            <img class="w-[20px] h-[20px] m-2" src="images/3dots.svg" alt="" srcset="">
+                        </div>
+
+                    </div>
+                    <p class="text-[18px] m-2 my-0">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Alias soluta aliquid laboriosam modi, earum ratione
+                        tenetur cumque cum consequatur maxime non maiores molestiae deleniti nemo delectus laborum optio
+                        ab quidem, aspernatur ut! Doloremque, officiis accusantium?
+                    </p>
+                    <img class="w-9/10" src="images/Picsart_24-02-16_15-03-52-331.png" alt="" srcset="">
+                    <div class="flex items-center justify-between m-2 my-0 mt-2">
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[25px] h-[25px] m-2 p-[2px] " src="images/comment.svg" alt=""><span>995</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-green-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/repost.svg" alt="">
+                            <p>5.1K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-pink-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/like.svg" alt="">
+                            <p>32K</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between hover:text-blue-500 rounded-full transition-all duration-300">
+
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/reach.svg" alt="">
+                            <p>1.8M</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/bookmark.svg" alt="">
+                            <img class="w-[20px] h-[20px] m-2 p-[2px]" src="images/share.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <!-- third  -->
+        <div class="third w-6/10 bg-black  sticky top-1 h-screen overflow-y-scroll  no-scrollbar">
+            <div
+                class="search sticky top-1 bg-black h-10 flex items-center justify-between m-7 my-0 border-[1px] border-neutral-500 rounded-full mt-2">
+                <img class="w-[20px] h-[20px] m-4 p-[2px] mr-0" src="images/search.svg" alt="" srcset="">
+                <input type="search" name="" id="" placeholder="Search"
+                    class="w-full text-[18px] text-white p-2 pl-1 rounded-full focus:outline-none">
+            </div>
+            <div class="premium h-auto  border-[1px] border-neutral-500 rounded-2xl m-7 mt-10">
+                <h2 class=" mx-5 my-3 text-[22px] font-bold">Subscribe to Premium</h2>
+                <p class=" mx-5 my-2 text-[15px] ">Subscribe to unlock new features and if eligible, receive a share of
+                    revenue.</p>
+                <button
+                    class="bg-blue-500 text-white font-semibold text-[18px] rounded-full w-3/10 h-10  mx-5 my-2 mb-4">Subscribe</button>
+            </div>
+            <div class="happening h-auto  border-[1px] border-neutral-500 rounded-2xl m-7 mt-10">
+                <h2 class=" mx-5 my-3 text-[22px] font-bold">What's Happening</h2>
+
+                <!-- trends  -->
+                <div class="w-full px-5 py-2  hover:bg-neutral-900 transition-all duration-300 ">
+                    <div class="flex items-center justify-between ">
+                        <p class="text-neutral-500 text-[15px]">
+                            Entertainment · Trending
+                        </p>
+                        <img class="w-[20px] h-[20px]" src="images/3dots.svg" alt="" srcset="">
+                    </div>
+                    <h3 class="font-bold">
+                        #AamirKhan
+                    </h3>
+                    <p class="text-neutral-500 text-[15px]">
+                        19.9K posts
+                    </p>
+                </div>
+                <!-- trends  -->
+                <div class="w-full px-5 py-2  hover:bg-neutral-900 transition-all duration-300 ">
+                    <div class="flex items-center justify-between ">
+                        <p class="text-neutral-500 text-[15px]">
+                            Trending in India
+                        </p>
+                        <img class="w-[20px] h-[20px]" src="images/3dots.svg" alt="" srcset="">
+                    </div>
+                    <h3 class="font-bold">
+                        #Darshan
+                    </h3>
+                    <p class="text-neutral-500 text-[15px]">
+                        5,632 posts
+                    </p>
+                </div>
+                <!-- trends  -->
+                <div class="w-full px-5 py-2  hover:bg-neutral-900 transition-all duration-300 ">
+                    <div class="flex items-center justify-between ">
+                        <p class="text-neutral-500 text-[15px]">
+                            Sports · Trending
+                        </p>
+                        <img class="w-[20px] h-[20px]" src="images/3dots.svg" alt="" srcset="">
+                    </div>
+                    <h3 class="font-bold">
+                        #Arshdeep
+                    </h3>
+                    <p class="text-neutral-500 text-[15px]">
+                        2,345 posts
+                    </p>
+                </div>
+                <!-- trends  -->
+                <div class="w-full px-5 py-2  hover:bg-neutral-900 transition-all duration-300 ">
+                    <div class="flex items-center justify-between ">
+                        <p class="text-neutral-500 text-[15px]">
+                            Entertainment · Trending
+                        </p>
+                        <img class="w-[20px] h-[20px]" src="images/3dots.svg" alt="" srcset="">
+                    </div>
+                    <h3 class="font-bold">
+                        #Lokeshkanagaraj
+                    </h3>
+                    <p class="text-neutral-500 text-[15px]">
+                        16.3K posts
+                    </p>
+                </div>
+                <!-- trends  -->
+                <div class="w-full px-5 py-2  hover:bg-neutral-900 transition-all duration-300 ">
+                    <div class="flex items-center justify-between ">
+                        <p class="text-neutral-500 text-[15px]">
+                            BTS · Trending
+                        </p>
+                        <img class="w-[20px] h-[20px]" src="images/3dots.svg" alt="" srcset="">
+                    </div>
+                    <h3 class="font-bold">
+                        JEON JUNGKOOK
+                    </h3>
+                    <p class="text-neutral-500 text-[15px]">
+                        25.6K posts
+                    </p>
+                </div>
+
+                <div class="showmore px-5 py-2 h-5 mb-5">
+                    <a class="text-blue-500 w-full  " href="#">Show more</a>
+                </div>
+
+            </div>
+            <div class="follow h-auto  border-[1px] border-neutral-500 rounded-2xl m-7 mt-10">
+                <h2 class=" mx-5 my-3 text-[22px] font-bold">Who to follow</h2>
+
+                <!-- users  -->
+                <div
+                class="flex items-center justify-between m-2 hover:bg-neutral-900 rounded-full transition-all duration-300">
+                <img class="w-[40px] h-[40px] m-2" src="images/Picsart_24-02-16_15-03-52-331.png" alt="" srcset="">
+                <div>
+                    <a class="font-bold" href="">Saksham Kushwaha</a>
+                    <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                </div>
+                 <button
+                    class="bg-white text-black font-semibold text-[16px] rounded-full w-3/10 h-8   ">Follow</button>
+            </div>
+                <!-- users  -->
+                <div
+                class="flex items-center justify-between m-2 hover:bg-neutral-900 rounded-full transition-all duration-300">
+                <img class="w-[40px] h-[40px] m-2" src="images/Picsart_24-02-16_15-03-52-331.png" alt="" srcset="">
+                <div>
+                    <a class="font-bold" href="">Saksham Kushwaha</a>
+                    <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                </div>
+                 <button
+                    class="bg-white text-black font-semibold text-[16px] rounded-full w-3/10 h-8   ">Follow</button>
+            </div>
+                <!-- users  -->
+                <div
+                class="flex items-center justify-between m-2 hover:bg-neutral-900 rounded-full transition-all duration-300">
+                <img class="w-[40px] h-[40px] m-2" src="images/Picsart_24-02-16_15-03-52-331.png" alt="" srcset="">
+                <div>
+                    <a class="font-bold" href="">Saksham Kushwaha</a>
+                    <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                </div>
+                 <button
+                    class="bg-white text-black font-semibold text-[16px] rounded-full w-3/10 h-8   ">Follow</button>
+            </div>
+                <!-- users  -->
+                <div
+                class="flex items-center justify-between m-2 hover:bg-neutral-900 rounded-full transition-all duration-300">
+                <img class="w-[40px] h-[40px] m-2" src="images/Picsart_24-02-16_15-03-52-331.png" alt="" srcset="">
+                <div>
+                    <a class="font-bold" href="">Saksham Kushwaha</a>
+                    <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                </div>
+                 <button
+                    class="bg-white text-black font-semibold text-[16px] rounded-full w-3/10 h-8   ">Follow</button>
+            </div>
+                <!-- users  -->
+                <div
+                class="flex items-center justify-between m-2 hover:bg-neutral-900 rounded-full transition-all duration-300">
+                <img class="w-[40px] h-[40px] m-2" src="images/Picsart_24-02-16_15-03-52-331.png" alt="" srcset="">
+                <div>
+                    <a class="font-bold" href="">Saksham Kushwaha</a>
+                    <a class="text-neutral-500" href="">@Sakshamkus89083</a>
+                </div>
+                 <button
+                    class="bg-white text-black font-semibold text-[16px] rounded-full w-3/10 h-8   ">Follow</button>
+            </div>
+
+
+            <div class="showmore px-5 py-2 h-5 mb-5">
+                    <a class="text-blue-500 w-full  " href="#">Show more</a>
+                </div>
+            </div>
+            <footer class="footer m-5 p-5 text-[8px]text-neutral-500">
+                Terms of Service
+ |
+Privacy Policy
+ |
+Cookie Policy
+ |
+Accessibility
+ |
+Ads info
+ |
+
+More
+© 2025 X Corp.
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

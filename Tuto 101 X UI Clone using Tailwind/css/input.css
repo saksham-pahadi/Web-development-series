@@ -1,0 +1,21 @@
+@import "tailwindcss";
+ /* globals.css */
+    @layer utilities {
+      /* Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Firefox */
+      .no-scrollbar {
+        scrollbar-width: none;
+      }
+
+      /* IE and Edge */
+      .no-scrollbar {
+        -ms-overflow-style: none;
+      }
+      .grokshadow{
+        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+      }
+    }

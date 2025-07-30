@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why react?</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: #848383;
+            height: 150px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">I am box1 </div>
+    <div class="box box2">I am box2 </div>
+    <div class="box box3">I am box3 </div>
+
+    <script>
+        setTimeout(() => {
+            const box1 = document.querySelector('.box1');
+
+            box1.style.backgroundColor = 'red';
+
+            box1.textContent = 'I am now red';
+        }, 1000);
+        setTimeout(() => {
+            const box2 = document.querySelector('.box2');
+
+            box2.style.backgroundColor = 'green';
+
+            box2.textContent = 'I am now green';
+        }, 2000);
+        setTimeout(() => {
+            const box3 = document.querySelector('.box3');
+
+            box3.style.backgroundColor = 'blue';
+
+            box3.textContent = 'I am now blue';
+        }, 3000);
+    </script>
+</body>
+</html>

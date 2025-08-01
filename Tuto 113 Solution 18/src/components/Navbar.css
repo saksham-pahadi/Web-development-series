@@ -1,0 +1,25 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: beige;
+    width: vw;
+    color: black;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navbar ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navbar ul li{
+    list-style: none;
+    font-weight: 500;
+    cursor: pointer;
+}

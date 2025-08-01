@@ -1,0 +1,38 @@
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px 0;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgb(0, 13, 61);
+  font-size: small;
+  height: 250px;
+  width: 209px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0);
+  
+  transition: all ease-in-out 2s;
+}
+.card:hover{
+  width: 209px;
+  border: 1px solid blue;
+  box-shadow:0px 0px 20px blue;
+  transition: all ease-in-out .1ms;
+
+}
+
+h1{
+  font-size: 20px;
+}
+span{
+  position: absolute;
+  bottom: 10px;
+}

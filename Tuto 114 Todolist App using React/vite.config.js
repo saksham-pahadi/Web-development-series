@@ -6,6 +6,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [tailwindcss(),react()],
   server: {
-    allowedHosts: ['f4051cae91ad.ngrok-free.app']
+    allowedHosts: ['6c3802b648ef.ngrok-free.app']
   },
 })

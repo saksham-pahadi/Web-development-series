@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  
+}
+nav{
+  background:rgb(140, 39, 140);
+}
+
+ul{
+  display: flex;
+}
+ul a{
+  text-decoration: none;
+  
+  color: white;
+}
+li{
+  list-style: none;
+  padding: 10px;
+}
+
+
+.red{
+  
+  background: red;
+  transition: all ease-in-out 300ms;
+}

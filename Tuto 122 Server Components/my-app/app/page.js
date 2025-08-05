@@ -2,7 +2,7 @@
 // import { useState, useEffect } from "react";
 import fs from "fs/promises"
 import Navbar from "@/component/Navbar"
-import Counter from "@/component/counter"
+import Counter from "@/component/Counter"
 export default function Home() {
   // const [count, setcount] = useState(0)
   console.log("Hey Saksham..")

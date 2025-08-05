@@ -12,6 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*{
+  cursor: url("https://img.icons8.com/?size=25&id=43151&format=png"), auto;
+}
 
 a {
   font-weight: 500;

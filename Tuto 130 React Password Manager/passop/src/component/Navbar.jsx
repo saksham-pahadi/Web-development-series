@@ -2,9 +2,11 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <nav className='bg-purple-200 flex items-center justify-between  p-5'>
+    <>
+
+      <nav className='flex items-center justify-between  p-5'>
         <div className="logo font-bold text-xl">
-            PassOP
+            &lt;PassOP&gt;
         </div>
       <ul>
         <li className='flex gap-2 mx-2 '>
@@ -14,6 +16,8 @@ const Navbar = () => {
         </li>
       </ul>
     </nav>
+    
+    </>
   )
 }
 

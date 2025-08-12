@@ -4,4 +4,7 @@ body{
   margin: 0;
   padding: 0;
   color: white;
+  background-color: #212121;
+  background-size: 20px 20px;
+  background-image: radial-gradient(#ffffff33 1px,#00091d 1px);
 }

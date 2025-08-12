@@ -21,7 +21,7 @@ const Navbar = () => {
 
       <a target='_blank' href="https://github.com/saksham-pahadi/Web-development-series/tree/main/Tuto%20130%20React%20Password%20Manager/passop">
 
-      <img className='invert p-1 rounded-2xl hover:bg-green-500 hover:invert-0' src="icon/github.svg" alt="" srcset="" />
+      <img className='invert p-1 rounded-2xl hover:bg-green-500 hover:invert-0' src="icon/github.svg" alt="" />
       </a>
     </div>
     </nav>

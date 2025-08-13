@@ -1,0 +1,10 @@
+nav>ul >li >a{
+  width: 50px;
+  transition: all ease-in-out .1s;
+}
+nav>ul >li >a:hover{
+  color: #00c950;
+width: 50px;
+font-weight: bolder;
+transition: all ease-in-out .1s;
+}

@@ -10,12 +10,20 @@ const Manager = () => {
     const [form, setform] = useState({ site: "", username: "", password: "" })
     const [passwordArray, setpasswordArray] = useState([])
 
+    const getPasswords = async () => {
+        let req = await fetch("http://localhost:3000/")
+        let passwords = await req.json()
+        if (passwords) {
+            console.log(passwords)
+            setpasswordArray(passwords)
+        }
+
+    }
+
 
     useEffect(() => {
-        let passwords = localStorage.getItem("password")
-        if (passwords) {
-            setpasswordArray(JSON.parse(passwords))
-        }
+        getPasswords()
+
     }, [])
 
 
@@ -53,18 +61,27 @@ const Manager = () => {
     }
 
 
-    const savePassword = () => {
+    const savePassword = async () => {
+
+        // await fetch("http://localhost:3000/", {
+        //     method: "DELETE", headers: { "content-type": "application/json" },
+        //     body: JSON.stringify({ id: form.id })
+        // })
         console.log(form)
         let uuid = uuidv4()
+
         if (form.site == "" || form.username == "" || form.password == "") {
             alert("Feilds are blank")
         }
         else {
 
             setpasswordArray([...passwordArray, { ...form, id: uuid }])
-            localStorage.setItem("password", JSON.stringify([...passwordArray, { ...form, id: uuid }]))
-            console.log([...passwordArray, { ...form, id: uuid }])
-            setform({ site: "", username: "", password: "" })
+            await fetch("http://localhost:3000/", {
+                method: "POST", headers: { "content-type": "application/json" },
+                body: JSON.stringify({ ...form, id: uuid })
+            })
+
+            setform({ site: "", username: "", password: "" ,id:""})
             toast('📥Saved Successfully!', {
                 position: "top-right",
                 autoClose: 5000,
@@ -80,20 +97,29 @@ const Manager = () => {
 
 
     }
-    const deletePassword = (id) => {
+    const deletePassword = async (id,edit="flase") => {
         console.log("deleting password with id:", id)
+        console.log(edit)
         setpasswordArray(passwordArray.filter(item => item.id !== id))
-        localStorage.setItem("password", JSON.stringify(passwordArray.filter(item => item.id !== id)))
-        toast('🗑️Deleted Successfully!', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
+        // localStorage.setItem("password", JSON.stringify(passwordArray.filter(item => item.id !== id)))
+        await fetch("http://localhost:3000/", {
+            method: "DELETE", headers: { "content-type": "application/json" },
+            body: JSON.stringify({ id })
+        })
+
+        if(edit=="flase"){
+
+            toast('🗑️Deleted Successfully!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
 
 
     }
@@ -106,8 +132,8 @@ const Manager = () => {
             console.log("editing password with id:", id)
             setform(passwordArray.filter(item => item.id === id)[0])
             setpasswordArray(passwordArray.filter(item => item.id !== id))
+            deletePassword(id,"true")
         }
-
 
     }
 
@@ -197,7 +223,28 @@ const Manager = () => {
                                         </div>
                                     </div>
                                     <div className='flex border-x justify-between items-center p-2 py-3  border-white text-left w-3/10'>
-                                        <p className='overflow-x-scroll no-scrollbar'>{item.password} </p>
+                                        {/* <p className='overflow-x-scroll no-scrollbar'>{item.password} </p> */}
+                                        
+                                            <input className='outline-none overflow-x-scroll no-scrollbar w-8/10' id={item.id} type="password" value={item.password} readOnly />
+
+                                        <div className='flex gap-1 items-center'>
+<span className=' right-2 text-black cursor-pointer' ><img onClick={(e) => {
+                                                let Url = e.target.src
+                                                console.log(e.target.type)
+                                                let SRC = Url.split("/icon/")[1];
+                                                let input=document.getElementById(item.id)
+                                                if (SRC === "unhide.svg" || input.type=="text") {
+                                                    e.target.src = `${Url.split("unhide")[0]}hide.svg`
+                                                    // passwordInput.current.type = "password";
+                                                    input.type="password"
+                                                }
+                                                else {
+                                                    e.target.src = `${Url.split("hide")[0]}unhide.svg`
+                                                    input.type="text"
+                                                    // passwordInput.current.type = "text";
+
+                                                }
+                                            }} src="/icon/hide.svg" alt="" /></span> 
 
                                         <div className='cursor-pointer' title="copy" onClick={() => { copyText(item.password) }}>
 
@@ -206,6 +253,7 @@ const Manager = () => {
                                                 trigger="hover">
                                             </lord-icon>
                                         </div>
+                                                    </div>
 
                                     </div>
                                     <div className='flex border-x items-center border-white py-3 text-left w-1/10'>

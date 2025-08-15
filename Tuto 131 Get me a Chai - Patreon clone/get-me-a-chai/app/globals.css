@@ -8,3 +8,13 @@ body {
   background-size: 20px 20px;
   background-image: radial-gradient(#37373799 1px,#00021f 1px);
 }
+
+.remove-arrow::-webkit-inner-spin-button,
+.remove-arrow::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+ textarea::-webkit-scrollbar {
+        display: none;            
+    }

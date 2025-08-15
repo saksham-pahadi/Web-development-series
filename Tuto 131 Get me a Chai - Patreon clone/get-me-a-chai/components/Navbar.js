@@ -1,56 +1,113 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
 import Link from 'next/link'
 
 const Navbar = () => {
   const { data: session } = useSession()
+  const [showdropdown, setshowdropdown] = useState(false)
 
   return (
-    <nav className='bg-gray-900 text-white flex justify-between  px-4 items-center h-16'>
-      <div className="hamburger sm:hidden">
+    <nav className='bg-gray-900 text-white flex justify-between  px-4 items-center h-16 sticky top-0 z-1'>
+
+      {session && <>
+
+
+        <div className="hamburger sm:hidden">
 
 
 
-        <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="" type="button"><svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
-        </svg>
-        </button>
+          <button id="dropdownInformationButton" onClick={() => { setshowdropdown(!showdropdown) }}
+          onBlur={() => { setshowdropdown(false) }} data-dropdown-toggle="dropdownInformation" className="flex items-center p-3 rounded-sm text-center bg-gray-800" type="button">  Welcome
+            <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+            </svg>
+          </button>
 
-        {/* <!-- Dropdown menu --> */}
-        <div id="dropdownInformation" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
-          <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-            <div>Bonnie Green</div>
-            <div className="font-medium truncate">name@flowbite.com</div>
+          {/* <!-- Dropdown menu --> */}
+          <div id="dropdownInformation" onClick={() => { setshowdropdown(!showdropdown) }} className={`z-10 absolute ${showdropdown ? " " : "hidden"} bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600  `}>
+            <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+
+              <div className="font-medium truncate flex justify-between"> {session.user.name} </div>
+            </div>
+            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+              <Link href={"/dashboard"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 ">
+                <button >Dashboard</button>
+              </Link>
+              <Link href={"/profile"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 ">
+                <button >Profile</button>
+              </Link>
+              <Link href={"/"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 ">
+                <button >Home</button>
+              </Link>
+              <Link href={"/about"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 ">
+                <button >About</button>
+              </Link>
+              <Link href={"/project"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 ">
+                <button >Project</button>
+              </Link>
+            </ul>
+            <div className="py-2">
+              <button onClick={() => { signOut() }} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</button>
+            </div>
           </div>
-          <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-            <li>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-            </li>
-            <li>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-            </li>
-            <li>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-            </li>
-          </ul>
-          <div className="py-2">
-            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-          </div>
+
+
         </div>
+      </>}
 
 
-      </div>
+      {!session && <>
+
+
+        <div className="hamburger sm:hidden" onBlur={() => { setshowdropdown(false) }}>
+
+
+
+          <button id="dropdownInformationButton" onClick={() => { setshowdropdown(!showdropdown) }}  data-dropdown-toggle="dropdownInformation" className="flex items-center p-3 rounded-sm text-center bg-blue-800" type="button">  Welcome
+            <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
+            </svg>
+          </button>
+
+          {/* <!-- Dropdown menu --> */}
+          <div id="dropdownInformation" className={`z-10 absolute ${showdropdown ? " " : "hidden"} bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600  `}>
+            <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+              <div className='font-bold'>Get me a Chai</div>
+
+            </div>
+            <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+              <Link href={"/login"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 ">
+                <button>Login</button>
+              </Link>
+              <Link href={"/"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 ">
+                <button >Home</button>
+              </Link>
+              <Link href={"/about"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 ">
+                <button >About</button>
+              </Link>
+              <Link href={"/project"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 ">
+                <button >Project</button>
+              </Link>
+
+            </ul>
+
+          </div>
+
+
+        </div>
+      </>}
 
 
 
 
-      <div className="logo flex items-center">
+
+      <Link href={"/"} className="logo flex items-center">
         <span className="flex gap-1 items-center"><img className="h-9 sm:h-8" src="tea.gif" alt="" /></span>
         <h2 className='font-bold text-lg'>
           GetMeAChai
         </h2>
-      </div>
+      </Link>
 
       <ul className='hidden sm:flex justify-around items-center gap-4 w-2/5'>
         <Link href={"/"}>Home</Link>

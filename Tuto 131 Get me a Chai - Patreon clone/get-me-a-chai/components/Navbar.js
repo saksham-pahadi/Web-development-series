@@ -8,7 +8,7 @@ const Navbar = () => {
   const [showdropdown, setshowdropdown] = useState(false)
 
   return (
-    <nav className='bg-gray-900 text-white flex justify-between  px-4 items-center h-16 sticky top-0 z-1'>
+    <nav className='bg-gray-900 text-white flex justify-between  px-4 items-center h-16 sticky top-0 z-5'>
 
       {session && <>
 

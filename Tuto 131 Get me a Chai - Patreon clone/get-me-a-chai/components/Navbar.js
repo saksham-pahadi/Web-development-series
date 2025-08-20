@@ -127,7 +127,7 @@ const Navbar = () => {
 
           <Link href={`/${session.user.name.split(" ")[0]}`}>
 
-            <img className='h-10' srcSet={session.user.image} alt="" />
+            <img className='h-10' srcSet={session.user.image} alt="profile.jpg" />
           </Link>
         </div>
       </>}

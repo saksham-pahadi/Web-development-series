@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-2 m-5 ">
-        <div className="font-bold text-3xl sm:text-5xl flex items-center gap-2">Buy me a chai <span className="flex items-center"><img className="h-9 sm:h-12" src="tea.gif" alt="" /></span></div>
+        <div className="font-bold text-3xl sm:text-5xl flex items-center gap-2">Get me a chai <span className="flex items-center"><img className="h-9 sm:h-12" src="tea.gif" alt="" /></span></div>
         <p className="text-center text-wrap">
           A crowdfunding platform for creators. Get funded by your fans and followers.
         </p>
@@ -17,6 +18,8 @@ export default function Home() {
 
 
       <div className="bg-white h-[2px] opacity-10"></div>
+
+      
 
 
 

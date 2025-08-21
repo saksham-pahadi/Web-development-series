@@ -23,17 +23,11 @@ const Login = () => {
 
 
     const handleLogin = async (e) => {
-        setEmail(form.email)
-        setPassword(form.password)
-        console.log(form.email)
-        console.log(email)
-        console.log(form.password)
-        console.log(password)
         e.preventDefault();
         
         await signIn("credentials", {
-            email,
-            password,
+            email:form.email.toLowerCase(),
+            password:form.password,
             callbackUrl: "/dashboard"
         });
     };
@@ -47,12 +41,14 @@ const Login = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(form)
         });
+        const data = await res.json();
+        console.log(data);
 
         if (res.ok) {
             setalready(true)
-            redirect("/login");
+            // redirect(`/[${data.username}]`);
         } else {
-            const data = await res.json();
+            
             setError(data.error);
             console.log(error)
         }

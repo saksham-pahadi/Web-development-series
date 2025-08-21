@@ -31,16 +31,17 @@ export async function POST(req) {
         // const hashedPassword = await bcrypt.hash(password, 10);
         console.log(password)
         const newUser = await User.create({
-            email,
+            email: email.toLowerCase(),
             password: password,
             username: email.split("@")[0],
+            name: email.split("@")[0].toUpperCase(),
             role: "user"
         })
 
 
         // await User.create(newUser);
 console.log("User created successfully")
-        return NextResponse.json({ message: "User created successfully" }, { status: 201 });
+        return NextResponse.json({ message: "User created successfully" }, { status: 201 },{username:email.split("@")[0]});
     } catch (err) {
         console.log(err)
         return NextResponse.json({ error: err.message }, { status: 500 });

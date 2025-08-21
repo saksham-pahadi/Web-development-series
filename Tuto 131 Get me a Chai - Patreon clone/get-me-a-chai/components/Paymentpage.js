@@ -18,12 +18,12 @@ const Paymentpage =  ({username}) => {
     }
 
 
-    const handlePayment = async (amount) => {
+    const handlePayment = async (amount,receiver) => {
     setLoading(true);
     const res = await fetch("/api/razorpay", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount }), // 👈 send amount to server
+      body: JSON.stringify({ amount}), // 👈 send amount to server
     });
     const data = await res.json();
     console.log(amount)
@@ -39,7 +39,7 @@ const Paymentpage =  ({username}) => {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID ,
       amount: amount*100,
       currency: "INR",
-      name: "Get Me A Chai",
+      name: `Get Me A Chai - ${receiver}`,
       description: "Test Transaction",
       order_id: data.orderId,
       handler: function (response) {
@@ -64,9 +64,9 @@ const Paymentpage =  ({username}) => {
             <Script src="https://checkout.razorpay.com/v1/checkout.js">
             </Script>
             <div className="makepayment">
-                <h1 className='text-2xl font-bold mb-3'>Support {session.user.name.split(" ")[0]}</h1>
+                <h1 className='text-2xl font-bold mb-3'>Support {session.user.name}</h1>
 
-                <input onChange={ handleChange} value={paymentform.amount} name="amount" type='number' className='w-full p-3 rounded-lg bg-slate-800 remove-arrow' placeholder='Enter Amount' onKeyDown={(evt) => (evt.key === '.' || evt.key === '-' || evt.key === '+' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()} />
+                <input onChange={handleChange} value={paymentform.amount} name="amount" type='number' className='w-full p-3 rounded-lg bg-slate-800 remove-arrow' placeholder='Enter Amount' onKeyDown={(evt) => (evt.key === '.' || evt.key === '-' || evt.key === '+' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()} />
 
 
                 {/* or choose from these Amount */}
@@ -83,8 +83,8 @@ const Paymentpage =  ({username}) => {
                     </button>
 
                 </div>
-                <textarea onChange={ handleChange} value={paymentform.message} name='message' className='bg-slate-800 my-2 rounded-lg border-2 border-slate-800 w-full p-2'  id="" placeholder='Enter Message'></textarea>
-                <button onClick={()=>{handlePayment(paymentform.amount)}} type="button" className="w-4/5 mx-auto text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br hover:shadow-lg hover:shadow-blue-500/50 hover:dark:shadow-lg hover:dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 transition-all duration-100 ease-out ">Pay</button>
+                <textarea onChange={handleChange} value={paymentform.message} name='message' className='bg-slate-800 my-2 rounded-lg border-2 border-slate-800 w-full p-2'  id="" placeholder='Enter Message'></textarea>
+                <button onClick={()=>{handlePayment(paymentform.amount,session.user.name)}} type="button" className="w-4/5 mx-auto text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br hover:shadow-lg hover:shadow-blue-500/50 hover:dark:shadow-lg hover:dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 transition-all duration-100 ease-out ">Pay</button>
                 <CheckoutButton amount="200"/>
             </div>
         </div>

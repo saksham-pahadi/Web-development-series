@@ -66,30 +66,34 @@ export const authoptions = NextAuth({
             if (account.provider == "github") {
                 await connectDB()
                 const currentUser = await User.findOne({ email: email })
+                console.log(!currentUser)
                 if (!currentUser) {
                     const newUser = await User.create({
                         email: user.email,
-
+                        profilepic:user.image,
                         username: user.email.split("@")[0],
                         name: user.name,
-                        role: "user"
+                        role: "user",
+                        password:"none"
                     })
 
                 }
                 return true
             }
             if (account.provider === "credentials") {
+                console.log(credentials)
                 await connectDB()
-                const currentUser = await User.findOne({ email: email })
-                if (!currentUser) {
-                    const newUser = await User.create({
-                        email,
-                        password: hashedPassword,
-                        username: email.split("@")[0],
-                        role: "user"
-                    })
+                const currentUser = await User.findOne({ email: credentials.email })
+                console.log(currentUser)
+                // if (!currentUser) {
+                //     const newUser = await User.create({
+                //         email,
+                //         password: hashedPassword,
+                //         username: email.split("@")[0],
+                //         role: "user"
+                //     })
 
-                }
+                // }
                 return true
             }
         },

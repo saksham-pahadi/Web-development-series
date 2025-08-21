@@ -1,5 +1,5 @@
 "use client"
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { redirect } from 'next/navigation'
 import { useSession, signIn, signOut } from "next-auth/react"
 import CheckoutButton from '@/components/CheckoutButton'
@@ -22,7 +22,7 @@ const Username = ({ Username }) => {
     redirect('/login')
   }
   else {
-
+    console.log(session)
 
     return (
       <div className='flex justify-center gap-2 m-2 flex-wrap'>
@@ -34,18 +34,19 @@ const Username = ({ Username }) => {
 
           <div>
 
-            <img className='h-50 w-50' src={`${session.user.image}`} alt="" />
-            <div className=' bg-slate-600  w-7 h-7 rounded-lg flex items-center justify-center relative bottom-10 left-40'>
+            {session.user.image ? <img className='h-50 w-50' src={`${session.user.image}`} alt="" /> : <div className='h-50 w-50 pb-2 bg-slate-600 flex items-center justify-center rounded-full text-9xl'>{session.user.name.split("")[0].toUpperCase()}</div>}
+            {edit && <div className=' bg-slate-600  w-7 h-7 rounded-lg flex items-center justify-center relative bottom-10 left-40 m-0'>
 
-              <input type="file" name="" id="dropzone-file" className="hidden bg-amber-500" />
+              <input type="file" name="" id="dropzone-file" className="hidden " />
               <label htmlFor="dropzone-file" className=''>
                 <img className=' ' src="pencil.svg" alt="" />
 
               </label>
-            </div>
+            </div>}
           </div>
           <h3 className='text-xl font-bold'>{session.user.name}</h3><h3>@username</h3>
           <p className='text-center md:text-left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vel blanditiis deserunt magni? Esse, laboriosam corporis. Officiis quia ratione nisi.</p>
+          <button className='bg-slate-600 p-2 m-2 rounded-lg md:w-full' onClick={() => { setedit(!edit) }}>Edit Profile</button>
         </aside>
 
 
@@ -89,7 +90,7 @@ const Username = ({ Username }) => {
               </li>
             </ul>
           </div>
-          <Paymentpage username={Username}/>
+          <Paymentpage username={Username} />
         </main>
       </div>
     )

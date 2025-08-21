@@ -8,7 +8,7 @@ export async function POST(req) {
     await connectDB()
 
     const body = await req.json(); // 👈 get data from client (amount etc.)
-    let p = await Payment.findOne({ oid: body.order.i })
+    // let p = await Payment.findOne({ oid: body.order.i })
     // if (!p) {
     //   return NextResponse.error("Order not found");
     // }

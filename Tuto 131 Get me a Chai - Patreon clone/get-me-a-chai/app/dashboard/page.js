@@ -111,7 +111,7 @@ const Dashboard = () => {
                 <span className="flex-1 ms-3 whitespace-nowrap text-left">Sign Up</span>
               </Link>
             </button>
-            <button onClick={() => { signOut({ callbackUrl: "/" })}}>
+            <button onClick={() => { setaside(false), setshowdropdown(false),setpannel("logout") }}>
               <Link href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                 <img src="exit.svg" alt="" />
                 <span className="flex-1 ms-3 whitespace-nowrap text-left text-red-500">Logout</span>
@@ -246,6 +246,28 @@ const Dashboard = () => {
 <CheckoutButton amount="200"/>
 
 </div>
+}
+
+{pannel=="logout" &&  <div className="flex justify-center items-center h-[80vh] text-black ">
+          <div className="bg-white p-6 rounded-xl shadow-lg">
+            <h2 className="text-lg font-bold mb-4">Confirm Logout</h2>
+            <p className="mb-4">Do you really want to log out?</p>
+            <div className="flex gap-4">
+              <button
+                onClick={() => signOut({ callbackUrl: "/" })}
+                className="bg-red-500 text-white px-4 py-2 rounded"
+              >
+                Yes, Logout
+              </button>
+              <button
+                onClick={() => setpannel("pannel")}
+                className="bg-gray-300 px-4 py-2 rounded"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
 }
     
     </div>

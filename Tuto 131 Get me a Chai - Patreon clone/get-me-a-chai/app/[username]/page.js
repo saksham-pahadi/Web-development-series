@@ -46,7 +46,7 @@ const Username = ({ Username }) => {
           </div>
           <h3 className='text-xl font-bold'>{session.user.name}</h3><h3>@username</h3>
           <p className='text-center md:text-left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati vel blanditiis deserunt magni? Esse, laboriosam corporis. Officiis quia ratione nisi.</p>
-          <button className='bg-slate-600 p-2 m-2 rounded-lg md:w-full' onClick={() => { setedit(!edit) }}>Edit Profile</button>
+          <button className='bg-slate-600 p-2 m-2 rounded-lg md:w-full' onClick={() => { setedit(!edit) }}>{!edit?"Edit Profile":"Save"}</button>
         </aside>
 
 
@@ -54,7 +54,7 @@ const Username = ({ Username }) => {
 
         <main className='main rounded-lg w-full lg:w-2/3 bg-slate-900 flex p-5 gap-5 flex-wrap justify-evenly'>
 
-          <div className="supporters ">
+          <div className="supporters  ">
             {/* list all supporters as leaderboard */}
             <h1 className='text-xl font-bold mb-3'>Supporters</h1>
             <ul>

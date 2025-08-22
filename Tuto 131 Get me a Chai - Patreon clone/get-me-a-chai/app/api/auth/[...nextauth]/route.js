@@ -67,7 +67,7 @@ export const authoptions = NextAuth({
                 await connectDB()
                 const currentUser = await User.findOne({ email: email })
                 console.log(!currentUser)
-                if (!currentUser) {
+                if (currentUser) {
                     const newUser = await User.create({
                         email: user.email,
                         profilepic:user.image,

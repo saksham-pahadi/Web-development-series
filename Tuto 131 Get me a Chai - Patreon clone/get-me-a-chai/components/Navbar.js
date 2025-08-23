@@ -104,10 +104,8 @@ const Navbar = () => {
 
 
       <Link href={"/"} className="logo flex items-center">
-        <span className="flex gap-1 items-center"><img className="h-9 sm:h-8" src="tea.gif" alt="" /></span>
-        <h2 className='font-bold text-lg'>
-          GetMeAChai
-        </h2>
+        <span className="flex gap-1 items-center"><img className="h-14" src="GMAC.png" alt="" /></span>
+        
       </Link>
 
       <ul className='hidden sm:flex justify-around items-center gap-4 w-2/5'>

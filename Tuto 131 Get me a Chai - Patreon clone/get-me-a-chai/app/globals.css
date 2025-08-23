@@ -4,9 +4,9 @@ body {
    margin: 0;
   padding: 0;
   color: white;
-  background-color: #212121;
-  background-size: 20px 20px;
-  background-image: radial-gradient(#37373799 1px,#00021f 1px);
+  background-color: #979797;
+  background-size:30px 30px;
+  background-image: radial-gradient(#37373799 1px,#16163b 1px);
 }
 
 .remove-arrow::-webkit-inner-spin-button,

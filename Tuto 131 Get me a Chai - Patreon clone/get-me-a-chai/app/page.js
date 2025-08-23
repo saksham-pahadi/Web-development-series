@@ -4,20 +4,30 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center gap-2 m-5 ">
-        <div className="font-bold text-3xl sm:text-5xl flex items-center gap-2">Get me a chai <span className="flex items-center"><img className="h-9 sm:h-12" src="tea.gif" alt="" /></span></div>
-        <p className="text-center text-wrap">
-          A crowdfunding platform for creators. Get funded by your fans and followers.
-        </p>
-        <div>
-          <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Start now</button>
-          <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Read more</button>
+      <div className="flex justify-center items-center gap-2 m-5 ">
+        
+        <div className="flex flex-col justify-center items-center gap-5">
+
+
+
+          <div className="font-bold text-3xl sm:text-5xl flex items-center gap-2">Get me a chai <span className="flex items-center"><img className="h-9 sm:h-12" src="tea.gif" alt="" /></span>
+          </div>
+
+          <p className="text-center text-wrap">
+            A crowdfunding platform for creators. Get funded by your fans and followers.
+          </p>
+
+          <div>
+            <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Start now</button>
+            <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl  dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Read more</button>
+          </div>
         </div>
+
       </div>
 
 
 
-      
+
 
 
 
@@ -84,7 +94,7 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img className="object-cover object-center rounded-2xl" alt="hero" src="Network.jpg" />
+            <img className=" " src="GMAC.png" alt="" />
           </div>
         </div>
       </section>

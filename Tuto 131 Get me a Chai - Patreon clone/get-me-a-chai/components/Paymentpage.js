@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Script from 'next/script'
 import { useSession, signIn, signOut } from "next-auth/react"
+import { ToastContainer, toast, Bounce } from 'react-toastify';
 import { initiate } from '@/actions/useractions'
 import CheckoutButton from './CheckoutButton'
 
@@ -43,7 +44,8 @@ const Paymentpage =  ({username}) => {
       description: "Test Transaction",
       order_id: data.orderId,
       handler: function (response) {
-        alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+        // alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+        toast.success("Payment successful! ");
       },
       theme: { color: "#1d293d" },
     };
@@ -61,6 +63,19 @@ const Paymentpage =  ({username}) => {
 
     return (
         <div className=' '>
+        <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition={Bounce}
+/>
             <Script src="https://checkout.razorpay.com/v1/checkout.js">
             </Script>
             <div className="makepayment ">

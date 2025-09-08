@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SessionWrapper from "@/components/SessionWrapper";
 import Script from "next/script";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,24 +25,29 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-         <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="afterInteractive" />
+        <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="afterInteractive" />
       </head>
-      
+
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <SessionWrapper>
 
-        <SessionWrapper>
+
+            <Navbar />
+            <div className="min-h-[83vh]">
+
+              {children}
+            </div>
+            <Footer />
+
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+
+          </SessionWrapper>
+        </ThemeProvider>
 
 
-          <Navbar />
-          <div className="min-h-[83vh]">
-
-            {children}
-          </div>
-          <Footer />
-          <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        </SessionWrapper>
       </body>
     </html>
   );

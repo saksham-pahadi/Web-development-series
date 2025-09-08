@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import colors from "@/theme/colors";
 
 export default function Home() {
   return (

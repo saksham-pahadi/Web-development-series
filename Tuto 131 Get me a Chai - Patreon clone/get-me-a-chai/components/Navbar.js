@@ -1,14 +1,17 @@
 "use client"
 import React, { useState } from 'react'
+import colors from '@/theme/colors'
 import { useSession, signIn, signOut } from "next-auth/react"
 import Link from 'next/link'
 
 const Navbar = () => {
   const { data: session } = useSession()
+  const color = colors;
+  console.log("color-->",`bg-[${color.darkColor1}]`)
   const [showdropdown, setshowdropdown] = useState(false)
 
   return (
-    <nav className='bg-gray-900 text-white flex justify-between  px-4 items-center h-16 sticky top-0 z-5'>
+    <nav className={`bg-[#1e2e4f] text-white flex justify-between  px-4 items-center h-16 sticky top-0 z-5`}>
 
       {session && <>
 

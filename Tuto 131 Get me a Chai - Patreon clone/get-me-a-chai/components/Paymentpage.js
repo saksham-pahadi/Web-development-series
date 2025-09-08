@@ -81,7 +81,7 @@ transition={Bounce}
             <div className="makepayment ">
                 <h1 className='text-2xl font-bold mb-3'>Support {session.user.name}</h1>
 
-                <input onChange={handleChange} value={paymentform.amount} name="amount" type='number' className='w-full p-3 rounded-lg bg-slate-800 remove-arrow' placeholder='Enter Amount' onKeyDown={(evt) => (evt.key === '.' || evt.key === '-' || evt.key === '+' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()} />
+                <input onChange={handleChange} value={paymentform?.amount||""} name="amount" type='number' className='w-full p-3 rounded-lg bg-slate-800 remove-arrow' placeholder='Enter Amount' onKeyDown={(evt) => (evt.key === '.' || evt.key === '-' || evt.key === '+' || evt.key === 'e' || evt.key === 'E') && evt.preventDefault()} />
 
 
                 {/* or choose from these Amount */}
